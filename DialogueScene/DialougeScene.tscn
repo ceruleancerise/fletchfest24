@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://jkkbvs4glc6a"]
+
+[ext_resource type="Script" path="res://DialogueScene/DialougeScene.gd" id="1_8l806"]
+[ext_resource type="Texture2D" uid="uid://c55rusou674q7" path="res://icon.svg" id="1_gcnbt"]
+
+[node name="DialougeScene" type="BoxContainer"]
+script = ExtResource("1_8l806")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Dialogue" type="Label" parent="VBox"]
+layout_mode = 2
+text = "My partner and I are nervous for our honeymoon. I’m worried our stress will get the best of us. Do you have a potion to help pep us up?"
+
+[node name="Customer" type="TextureRect" parent="VBox"]
+layout_mode = 2
+texture = ExtResource("1_gcnbt")
+
+[node name="Table" type="TextureRect" parent="VBox"]
+layout_mode = 2
+texture = ExtResource("1_gcnbt")

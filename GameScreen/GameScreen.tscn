@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://ng5paan00u7q"]
+
+[ext_resource type="Script" path="res://GameScreen/GameScreen.gd" id="1_7246j"]
+[ext_resource type="PackedScene" uid="uid://b150me7q4mai6" path="res://IngredientShop/IngredientShop.tscn" id="1_rjsp4"]
+[ext_resource type="Resource" uid="uid://cdj6rhsycku3e" path="res://Ingredients/TestIngredient.tres" id="2_bx7n0"]
+[ext_resource type="PackedScene" uid="uid://jkkbvs4glc6a" path="res://DialogueScene/DialougeScene.tscn" id="2_folb2"]
+[ext_resource type="PackedScene" uid="uid://bjjh4ek2nurc2" path="res://IngredientCauldron/IngredientCauldron.tscn" id="3_acnkb"]
+[ext_resource type="PackedScene" uid="uid://mio3p1jkorlo" path="res://PotionActions/PotionActions.tscn" id="3_ckwqu"]
+
+[node name="GameScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7246j")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialougeScene" parent="HBox" instance=ExtResource("2_folb2")]
+layout_mode = 2
+
+[node name="PotionSection" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+
+[node name="IngredientShop" parent="HBox/PotionSection" instance=ExtResource("1_rjsp4")]
+layout_mode = 2
+ingredients = Array[Resource("res://Ingredient/Ingredient.gd")]([ExtResource("2_bx7n0"), ExtResource("2_bx7n0"), ExtResource("2_bx7n0"), ExtResource("2_bx7n0"), ExtResource("2_bx7n0"), ExtResource("2_bx7n0")])
+
+[node name="PotionSectionBottom" type="HBoxContainer" parent="HBox/PotionSection"]
+layout_mode = 2
+
+[node name="PotionActions" parent="HBox/PotionSection/PotionSectionBottom" instance=ExtResource("3_ckwqu")]
+layout_mode = 2
+
+[node name="IngredientCauldron" parent="HBox/PotionSection/PotionSectionBottom" instance=ExtResource("3_acnkb")]
+layout_mode = 2
+
+[connection signal="s_brew_button_pressed" from="HBox/PotionSection/PotionSectionBottom/PotionActions" to="." method="_on_brew_button_pressed"]
+[connection signal="s_clear_button_pressed" from="HBox/PotionSection/PotionSectionBottom/PotionActions" to="." method="_on_clear_button_pressed"]

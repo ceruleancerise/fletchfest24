@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjjh4ek2nurc2"]
+
+[ext_resource type="Script" path="res://IngredientCauldron/IngredientCauldron.gd" id="1_7af4e"]
+
+[node name="IngredientCauldron" type="BoxContainer"]
+script = ExtResource("1_7af4e")
+slot_number = 2
+
+[node name="Grid" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 6

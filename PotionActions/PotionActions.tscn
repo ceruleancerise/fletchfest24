@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://mio3p1jkorlo"]
+
+[ext_resource type="Script" path="res://PotionActions/PotionActions.gd" id="1_io2f0"]
+
+[node name="PotionActions" type="BoxContainer"]
+script = ExtResource("1_io2f0")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="BrewButton" type="Button" parent="VBox"]
+layout_mode = 2
+text = "Brew"
+
+[node name="ClearButton" type="Button" parent="VBox"]
+layout_mode = 2
+text = "Clear"
+
+[connection signal="pressed" from="VBox/BrewButton" to="." method="_on_brew_button_pressed"]
+[connection signal="pressed" from="VBox/ClearButton" to="." method="_on_clear_button_pressed"]
