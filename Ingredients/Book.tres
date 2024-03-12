@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://c1h76kmn08psi"]
+
+[ext_resource type="Script" path="res://Ingredient/Ingredient.gd" id="1_o6kkj"]
+[ext_resource type="Texture2D" uid="uid://cpn552k1moboa" path="res://assets/img_items/book.png" id="2_kl6pv"]
+
+[resource]
+script = ExtResource("1_o6kkj")
+title = "Book"
+tags = Array[String]([])
+texture = ExtResource("2_kl6pv")

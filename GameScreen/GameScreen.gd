@@ -1,6 +1,6 @@
 extends Control
 
-@onready var ingredient_cauldron = $HBox/PotionSection/PotionSectionBottom/IngredientCauldron
+@onready var ingredient_cauldron = $HBox/PotionBackground/PotionSection/PotionSectionBottom/IngredientCauldron
 
 var potion_request: PotionRequest
 

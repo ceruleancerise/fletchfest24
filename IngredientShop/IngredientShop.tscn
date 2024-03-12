@@ -11,5 +11,7 @@ grow_vertical = 2
 script = ExtResource("1_xc8ox")
 
 [node name="Grid" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(1280, 640)
 layout_mode = 2
+size_flags_horizontal = 3
 columns = 6
