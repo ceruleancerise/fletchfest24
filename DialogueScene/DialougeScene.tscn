@@ -1,35 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://jkkbvs4glc6a"]
+[gd_scene load_steps=3 format=3 uid="uid://jkkbvs4glc6a"]
 
 [ext_resource type="Script" path="res://DialogueScene/DialougeScene.gd" id="1_8l806"]
-[ext_resource type="Texture2D" uid="uid://c55rusou674q7" path="res://icon.svg" id="1_gcnbt"]
-[ext_resource type="Texture2D" uid="uid://ce61g0qpk2k8s" path="res://assets/img_bg/bg_dialogue.png" id="2_ym4j2"]
+[ext_resource type="Texture2D" uid="uid://8pulf1gouh1k" path="res://assets/img_customers/placeholder.png" id="2_f3yvv"]
 
 [node name="DialougeScene" type="BoxContainer"]
-script = ExtResource("1_8l806")
-
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 2
-texture = ExtResource("2_ym4j2")
-
-[node name="VBox" type="VBoxContainer" parent="Background"]
-custom_minimum_size = Vector2(640, 1080)
-layout_mode = 1
 offset_right = 640.0
 offset_bottom = 1080.0
+script = ExtResource("1_8l806")
 
-[node name="Dialogue" type="Label" parent="Background/VBox"]
-custom_minimum_size = Vector2(640, 320)
+[node name="Customer" type="TextureRect" parent="."]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_f3yvv")
+
+[node name="Dialogue" type="Label" parent="Customer"]
+custom_minimum_size = Vector2(640, 320)
+layout_mode = 1
+offset_right = 320.0
+offset_bottom = 320.0
+size_flags_vertical = 0
 text = "My partner and I are nervous for our honeymoon. I’m worried our stress will get the best of us. Do you have a potion to help pep us up?"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Customer" type="TextureRect" parent="Background/VBox"]
+[node name="VBox" type="VBoxContainer" parent="."]
 layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("1_gcnbt")
-
-[node name="Table" type="TextureRect" parent="Background/VBox"]
-layout_mode = 2
-texture = ExtResource("1_gcnbt")
