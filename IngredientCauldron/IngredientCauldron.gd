@@ -1,4 +1,4 @@
-extends Control
+class_name IngredientCauldron extends Control
 
 var p_IngredientSlot = preload("res://IngredientSlot/IngredientSlot.tscn")
 
@@ -18,3 +18,11 @@ func _ready() -> void:
 func clear_slots() -> void:
 	for slot in slots:
 		slot.clear_ingredient()
+
+func get_ingredients_from_slots() -> Array[Ingredient]:
+	var ingredients: Array[Ingredient] = []
+	for slot in slots:
+		ingredients.push_back(slot.ingredient)
+	return ingredients
+	
+	

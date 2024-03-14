@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsomiab3vj3xa"]
+[gd_scene load_steps=11 format=3 uid="uid://dsomiab3vj3xa"]
 
+[ext_resource type="Script" path="res://PotionScene/PotionScene.gd" id="1_dcbq4"]
 [ext_resource type="PackedScene" uid="uid://b150me7q4mai6" path="res://IngredientShop/IngredientShop.tscn" id="1_dpdg8"]
 [ext_resource type="Resource" uid="uid://coo1hyaa5yjl8" path="res://Ingredients/Shoe.tres" id="2_fr82w"]
 [ext_resource type="Resource" uid="uid://ci6b02qt4shj5" path="res://Ingredients/Crystal.tres" id="3_v35qk"]
@@ -10,9 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://mio3p1jkorlo" path="res://PotionActions/PotionActions.tscn" id="8_f386l"]
 [ext_resource type="PackedScene" uid="uid://bjjh4ek2nurc2" path="res://IngredientCauldron/IngredientCauldron.tscn" id="9_hvnk5"]
 
-[node name="PotionScene" type="BoxContainer"]
+[node name="PotionScene" type="BoxContainer" node_paths=PackedStringArray("ingredient_cauldron")]
 offset_right = 1280.0
 offset_bottom = 1080.0
+script = ExtResource("1_dcbq4")
+ingredient_cauldron = NodePath("Vbox/PotionSceneBottom/IngredientCauldron")
 
 [node name="Vbox" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -35,3 +38,6 @@ layout_mode = 2
 
 [node name="IngredientCauldron" parent="Vbox/PotionSceneBottom" instance=ExtResource("9_hvnk5")]
 layout_mode = 2
+
+[connection signal="s_brew_button_pressed" from="Vbox/PotionSceneBottom/PotionActions" to="." method="_on_brew_button_pressed"]
+[connection signal="s_clear_button_pressed" from="Vbox/PotionSceneBottom/PotionActions" to="." method="_on_clear_button_pressed"]

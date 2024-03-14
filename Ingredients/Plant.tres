@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://cmkvno4v8chtj"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://cmkvno4v8chtj"]
 
 [ext_resource type="Script" path="res://Ingredient/Ingredient.gd" id="1_mgqxl"]
+[ext_resource type="AudioStream" uid="uid://cjqkj34qovnpd" path="res://assets/sfx_items/plant.mp3" id="2_4wnrr"]
 [ext_resource type="Texture2D" uid="uid://bxqmxdl4ot30j" path="res://assets/img_items/plant.png" id="2_rk1k6"]
+[ext_resource type="AudioStream" uid="uid://hc4ufegjblna" path="res://assets/sfx_items/plant_drop.mp3" id="3_o4jkj"]
 
 [resource]
 script = ExtResource("1_mgqxl")
 title = "Plant"
-tags = Array[String]([])
+tags = Array[String](["leafy", "herbal", "alive"])
 texture = ExtResource("2_rk1k6")
+sfx_pickup = ExtResource("2_4wnrr")
+sfx_putdown = ExtResource("3_o4jkj")

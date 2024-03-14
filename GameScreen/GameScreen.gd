@@ -1,11 +1,7 @@
 extends Control
 
-@onready var ingredient_cauldron = $HBox/PotionBackground/PotionSection/PotionSectionBottom/IngredientCauldron
+@export var dialogue_scene: DialogueScene
+@export var potion_scene: PotionScene
 
-var potion_request: PotionRequest
-
-func _on_brew_button_pressed() -> void:
-	pass # Replace with function body.
-
-func _on_clear_button_pressed() -> void:
-	ingredient_cauldron.clear_slots()
+func _on_potion_brewed(ingredients: Array[Ingredient]) -> void:
+	dialogue_scene.submit_potion(ingredients)

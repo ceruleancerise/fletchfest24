@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://bkol28rs1ihs7"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://bkol28rs1ihs7"]
 
 [ext_resource type="Script" path="res://Ingredient/Ingredient.gd" id="1_0ihpe"]
+[ext_resource type="AudioStream" uid="uid://bjr3j2qp1dsev" path="res://assets/sfx_items/cinnamon.wav" id="2_hxor6"]
 [ext_resource type="Texture2D" uid="uid://bi3hamjnpdadc" path="res://assets/img_items/cinnamon.png" id="2_y8fmr"]
+[ext_resource type="AudioStream" uid="uid://d2d0r5qjq8ujb" path="res://assets/sfx_items/cinnamon_drop.mp3" id="3_77d5i"]
 
 [resource]
 script = ExtResource("1_0ihpe")
 title = "Cinnamon"
-tags = Array[String]([])
+tags = Array[String](["aromatic", "earthy", "brown"])
 texture = ExtResource("2_y8fmr")
+sfx_pickup = ExtResource("2_hxor6")
+sfx_putdown = ExtResource("3_77d5i")

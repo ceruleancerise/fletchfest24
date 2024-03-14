@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=2 format=3 uid="uid://grppuln6oai3"]
+
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="1_02je4"]
+
+[resource]
+script = ExtResource("1_02je4")
+tags_required = Array[String](["alive", "valuable", "colorful"])
+dialogue = "I need something. (Alive, valuable, colorful.)"
