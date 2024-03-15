@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jkkbvs4glc6a" path="res://DialogueScene/DialougeScene.tscn" id="2_folb2"]
 [ext_resource type="PackedScene" uid="uid://dsomiab3vj3xa" path="res://PotionScene/PotionScene.tscn" id="2_ngijs"]
 
-[node name="GameScreen" type="Control" node_paths=PackedStringArray("dialogue_scene", "potion_scene")]
+[node name="GameScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,8 +13,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7246j")
-dialogue_scene = NodePath("Scenes/DialougeScene")
-potion_scene = NodePath("Scenes/PotionScene")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1

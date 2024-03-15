@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" path="res://IngredientSlot/IngredientSlot.gd" id="2_5lj8h"]
 
-[node name="IngredientSlot" type="ColorRect"]
+[node name="IngredientSlot" type="ColorRect" node_paths=PackedStringArray("audio_player")]
 custom_minimum_size = Vector2(200, 200)
 offset_right = 128.0
 offset_bottom = 128.0
 color = Color(0, 0, 0, 0)
 script = ExtResource("2_5lj8h")
+audio_player = NodePath("AudioPlayer")
 
 [node name="IngredientTexture" type="TextureRect" parent="."]
 layout_mode = 2
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]

@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" path="res://PotionActions/PotionActions.gd" id="1_io2f0"]
 
-[node name="PotionActions" type="MarginContainer"]
+[node name="PotionActions" type="MarginContainer" node_paths=PackedStringArray("audio_player")]
 script = ExtResource("1_io2f0")
+audio_player = NodePath("AudioPlayer")
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="VBox" type="VBoxContainer" parent="."]
 layout_mode = 2

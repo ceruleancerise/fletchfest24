@@ -2,27 +2,23 @@ class_name IngredientCauldron extends Control
 
 var p_IngredientSlot = preload("res://IngredientSlot/IngredientSlot.tscn")
 
-@export var slot_number: int
+@export var max_ingredient_count: int = 0
+@export var slot: IngredientSlot
 
-@onready var grid = $Grid
+var ingredients: Array[Ingredient] = []
 
 var slots: Array[Node]
 
-func _ready() -> void:
-	for i in range(slot_number):
-		var slot = p_IngredientSlot.instantiate()
-		slot.is_clearable = true
-		grid.add_child(slot)
-		slots.push_back(slot)
-
 func clear_slots() -> void:
-	for slot in slots:
-		slot.clear_ingredient()
+	ingredients = []
+	slot.clear_ingredient()
 
-func get_ingredients_from_slots() -> Array[Ingredient]:
-	var ingredients: Array[Ingredient] = []
-	for slot in slots:
-		ingredients.push_back(slot.ingredient)
+func get_ingredients() -> Array[Ingredient]:
 	return ingredients
 	
-	
+func _on_ingredient_changed(ingredient: Ingredient) -> void:
+	if (ingredients.size() < max_ingredient_count):
+		ingredients.push_back(ingredient)
+		print("Added " + ingredient.title)
+	else:
+		print("Already at max capacity")

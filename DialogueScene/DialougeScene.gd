@@ -11,8 +11,10 @@ func _ready() -> void:
 
 func submit_potion(ingredients: Array[Ingredient]):
 	print("Potion submitted:")
-	var i_1 = ingredients[0].title if (!!ingredients[0]) else "empty"
-	var i_2 = ingredients[1].title if (!!ingredients[1]) else "empty"
+	var i_1 = "empty"
+	if (ingredients.size() >= 1 && !!ingredients[0]): i_1 = ingredients[0].title
+	var i_2 = "empty"
+	if (ingredients.size() >= 2 && !!ingredients[1]): i_2 = ingredients[1].title
 	print(i_1 + ", " + i_2)
 	
 	var matching_tags = get_matching_ingredient_tags(ingredients)
