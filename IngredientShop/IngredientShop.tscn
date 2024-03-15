@@ -1,21 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://b150me7q4mai6"]
+[gd_scene load_steps=3 format=3 uid="uid://b150me7q4mai6"]
 
 [ext_resource type="Script" path="res://IngredientShop/IngredientShop.gd" id="1_xc8ox"]
+[ext_resource type="Texture2D" uid="uid://owjiuqfplwqr" path="res://assets/img_props/shelf.png" id="2_6mqj5"]
 
-[node name="IngredientShop" type="BoxContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1920.0
-offset_bottom = -1080.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="IngredientShop" type="MarginContainer"]
+offset_right = 600.0
+offset_bottom = 100.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_xc8ox")
 
-[node name="Grid" type="GridContainer" parent="."]
+[node name="ShelfGrid" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="Spacer1" type="ColorRect" parent="ShelfGrid"]
+custom_minimum_size = Vector2(0, 176)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Shelf1" type="TextureRect" parent="ShelfGrid"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-columns = 6
+texture = ExtResource("2_6mqj5")
+
+[node name="Spacer2" type="ColorRect" parent="ShelfGrid"]
+custom_minimum_size = Vector2(0, 147)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Shelf2" type="TextureRect" parent="ShelfGrid"]
+layout_mode = 2
+texture = ExtResource("2_6mqj5")
+
+[node name="IngredientGrid" type="GridContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+columns = 3

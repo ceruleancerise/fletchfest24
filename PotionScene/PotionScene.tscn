@@ -11,9 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://mio3p1jkorlo" path="res://PotionActions/PotionActions.tscn" id="8_f386l"]
 [ext_resource type="PackedScene" uid="uid://bjjh4ek2nurc2" path="res://IngredientCauldron/IngredientCauldron.tscn" id="9_hvnk5"]
 
-[node name="PotionScene" type="BoxContainer" node_paths=PackedStringArray("ingredient_cauldron")]
+[node name="PotionScene" type="MarginContainer" node_paths=PackedStringArray("ingredient_cauldron")]
 offset_right = 1280.0
 offset_bottom = 1080.0
+theme_override_constants/margin_left = 0
 script = ExtResource("1_dcbq4")
 ingredient_cauldron = NodePath("Vbox/PotionSceneBottom/IngredientCauldron")
 
@@ -23,6 +24,8 @@ layout_mode = 2
 [node name="IngredientShop" parent="Vbox" instance=ExtResource("1_dpdg8")]
 layout_mode = 2
 size_flags_horizontal = 1
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 24
 ingredients = Array[Resource("res://Ingredient/Ingredient.gd")]([ExtResource("2_fr82w"), ExtResource("3_v35qk"), ExtResource("4_6451n"), ExtResource("5_wc7r5"), ExtResource("6_524yr"), ExtResource("7_pw7ae")])
 
 [node name="Spacer" type="BoxContainer" parent="Vbox"]
@@ -30,14 +33,22 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="PotionSceneBottom" type="HBoxContainer" parent="Vbox"]
+custom_minimum_size = Vector2(1280, 0)
 layout_mode = 2
 size_flags_vertical = 8
 
 [node name="PotionActions" parent="Vbox/PotionSceneBottom" instance=ExtResource("8_f386l")]
 layout_mode = 2
+theme_override_constants/margin_left = 128
+
+[node name="Spacer" type="BoxContainer" parent="Vbox/PotionSceneBottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="IngredientCauldron" parent="Vbox/PotionSceneBottom" instance=ExtResource("9_hvnk5")]
 layout_mode = 2
+size_flags_horizontal = 8
 
 [connection signal="s_brew_button_pressed" from="Vbox/PotionSceneBottom/PotionActions" to="." method="_on_brew_button_pressed"]
 [connection signal="s_clear_button_pressed" from="Vbox/PotionSceneBottom/PotionActions" to="." method="_on_clear_button_pressed"]

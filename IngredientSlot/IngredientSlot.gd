@@ -33,7 +33,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 	return ingredient_copy
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	return (data is Ingredient)
+	return (data is Ingredient) && (!!is_clearable) 
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
 	set_ingredient(data)

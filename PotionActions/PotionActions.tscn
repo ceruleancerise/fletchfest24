@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://PotionActions/PotionActions.gd" id="1_io2f0"]
 
-[node name="PotionActions" type="BoxContainer"]
+[node name="PotionActions" type="MarginContainer"]
 script = ExtResource("1_io2f0")
 
 [node name="VBox" type="VBoxContainer" parent="."]

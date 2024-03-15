@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="PotionRequest" load_steps=2 format=3 uid="uid://grppuln6oai3"]
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://grppuln6oai3"]
 
 [ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="1_02je4"]
+[ext_resource type="Texture2D" uid="uid://b8qc6wf3mh5er" path="res://assets/img_customers/elf-boy.png" id="1_ma1da"]
 
 [resource]
 script = ExtResource("1_02je4")
 tags_required = Array[String](["alive", "valuable", "colorful"])
 dialogue = "I need something. (Alive, valuable, colorful.)"
+customer = ExtResource("1_ma1da")

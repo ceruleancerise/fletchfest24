@@ -4,10 +4,11 @@ var p_IngredientSlot = preload("res://IngredientSlot/IngredientSlot.tscn")
 
 @export var ingredients: Array[Ingredient]
 
-@onready var grid = $Grid
+@onready var ingredent_grid = $IngredientGrid
 
 func _ready() -> void:
 	for ingredient in ingredients:
 		var slot = p_IngredientSlot.instantiate()
-		grid.add_child(slot)
+		ingredent_grid.add_child(slot)
 		slot.set_ingredient(ingredient)
+ 

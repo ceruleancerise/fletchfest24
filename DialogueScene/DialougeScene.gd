@@ -2,6 +2,8 @@ class_name DialogueScene extends Control
 
 @export var request: PotionRequest
 
+@export var customer: TextureRect
+
 @export var dialogue: Label
 
 func _ready() -> void:
@@ -47,4 +49,5 @@ func is_matching_tags_sufficient(tags: Array[String]) -> bool:
 
 func set_request(new_request: PotionRequest):
 	request = new_request
+	customer.set_texture(request.customer)
 	dialogue.set_text(request.dialogue)
