@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://djdudsvamqqo4" path="res://IngredientSlot/IngredientSlot.tscn" id="3_6t04b"]
 
 [node name="IngredientCauldron" type="MarginContainer" node_paths=PackedStringArray("slot")]
+theme_override_constants/margin_top = 128
 script = ExtResource("1_7af4e")
 max_ingredient_count = 2
 slot = NodePath("Cauldron/IngredientSlot")

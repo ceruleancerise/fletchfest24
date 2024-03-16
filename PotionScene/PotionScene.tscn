@@ -27,7 +27,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 1
 theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 48
+theme_override_constants/margin_top = 24
 ingredients = Array[Resource("res://Ingredient/Ingredient.gd")]([ExtResource("2_fr82w"), ExtResource("3_v35qk"), ExtResource("4_6451n"), ExtResource("5_wc7r5"), ExtResource("6_524yr"), ExtResource("7_pw7ae"), ExtResource("9_csqbk"), ExtResource("10_t36ns")])
 
 [node name="Spacer" type="BoxContainer" parent="Vbox"]
@@ -42,6 +42,7 @@ size_flags_vertical = 8
 [node name="IngredientCauldron" parent="Vbox/PotionSceneBottom" instance=ExtResource("9_hvnk5")]
 layout_mode = 2
 theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 180
 
 [node name="Spacer" type="BoxContainer" parent="Vbox/PotionSceneBottom"]
 layout_mode = 2

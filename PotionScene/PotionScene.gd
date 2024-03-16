@@ -13,3 +13,5 @@ func _on_clear_button_pressed() -> void:
 func _on_brew_button_pressed() -> void:
 	var ingredients = ingredient_cauldron.get_ingredients()
 	s_potion_brewed.emit(ingredients)
+	ingredient_cauldron.clear_slots()
+	ingredient_shop.reset_ingredients()

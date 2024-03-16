@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://grppuln6oai3"]
+
+[ext_resource type="Texture2D" uid="uid://bkkcab1ef0uih" path="res://assets/img_customers/dwarf-man.png" id="1_m527h"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_vdcjt"]
+
+[resource]
+script = ExtResource("2_vdcjt")
+tags_required = Array[String](["alive", "valuable", "colorful"])
+dialogue = "REQUEST 1"
+customer = ExtResource("1_m527h")

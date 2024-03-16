@@ -1,13 +1,22 @@
 class_name DialogueScene extends Control
 
+@onready var request_library: Array[PotionRequest] = [
+	preload("res://PotionRequests/TestRequest1.tres"),
+	preload("res://PotionRequests/TestRequest2.tres"),
+	preload("res://PotionRequests/TestRequest3.tres")
+]
+
 @export var request: PotionRequest
-
 @export var customer: TextureRect
-
 @export var dialogue: Label
+@export var animation_player: AnimationPlayer
+
+@onready var requests: Array[PotionRequest]
 
 func _ready() -> void:
-	set_request(request)
+	reset_requests()
+	set_random_request()
+	customer_enter()
 
 func submit_potion(ingredients: Array[Ingredient]):
 	print("Potion submitted:")
@@ -24,6 +33,8 @@ func submit_potion(ingredients: Array[Ingredient]):
 	var is_sufficient = is_matching_tags_sufficient(matching_tags)
 	print ("Is sufficient:")
 	print(is_sufficient)
+	
+	if (is_sufficient): customer_exit()
 
 # Terrible algorithm 
 func get_matching_ingredient_tags(ingredients: Array[Ingredient]) -> Array[String]:
@@ -48,8 +59,32 @@ func is_matching_tags_sufficient(tags: Array[String]) -> bool:
 			is_sufficient = false
 	
 	return is_sufficient
+	
+func reset_requests():
+	requests = request_library.duplicate(true)
+	requests.shuffle()
+	
+func set_random_request():
+	if (requests.size() == 0): 
+		print("No requests left.")
+		return
+		
+	var new_request = requests.pop_back()
+	set_request(new_request)
 
-func set_request(new_request: PotionRequest):
+func set_request(new_request: PotionRequest):	
 	request = new_request
 	customer.set_texture(request.customer)
 	dialogue.set_text(request.dialogue)
+	
+func customer_exit():
+	animation_player.play("customer_exit")
+	
+func customer_enter():
+	animation_player.play("customer_enter")
+
+func _on_animation_finished(anim_name: StringName) -> void:
+	match (anim_name):
+		"customer_exit": 
+			set_random_request()
+			customer_enter()

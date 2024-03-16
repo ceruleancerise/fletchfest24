@@ -2,34 +2,9 @@
 
 [ext_resource type="Script" path="res://DialogueScene/DialougeScene.gd" id="1_8l806"]
 [ext_resource type="Texture2D" uid="uid://8pulf1gouh1k" path="res://assets/img_customers/placeholder.png" id="2_f3yvv"]
-[ext_resource type="Resource" uid="uid://grppuln6oai3" path="res://PotionRequests/TestRequest.tres" id="2_vci6w"]
+[ext_resource type="Resource" uid="uid://grppuln6oai3" path="res://PotionRequests/TestRequest1.tres" id="2_q1pmj"]
 [ext_resource type="Texture2D" uid="uid://yh2halww35lt" path="res://assets/img_props/counter.png" id="4_6kc7g"]
 [ext_resource type="FontFile" uid="uid://cme6hj874j41" path="res://assets/fonts/MadimiOne-Regular.ttf" id="4_e314r"]
-
-[sub_resource type="Animation" id="Animation_f3fbw"]
-resource_name = "customer_enter"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Customer:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Customer:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1080, -0.25, 0, 0.5, -915.5, 0, -0.9, 4.5, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
 
 [sub_resource type="Animation" id="Animation_y514y"]
 length = 0.001
@@ -56,8 +31,55 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_f3fbw"]
+resource_name = "customer_enter"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Customer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Customer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1080, -0.25, 0, 0.5, -915.5, 0, -0.9, 4.5, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
 [sub_resource type="Animation" id="Animation_bj7y1"]
 resource_name = "customer_exit"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Customer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.2, 3),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Customer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.606781, 98, 1080, -0.698062, -10, 0.25, 0),
+"times": PackedFloat32Array(0, 0.9)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_thip0"]
 _data = {
@@ -66,19 +88,19 @@ _data = {
 "customer_exit": SubResource("Animation_bj7y1")
 }
 
-[node name="DialougeScene" type="MarginContainer" node_paths=PackedStringArray("customer", "dialogue")]
+[node name="DialougeScene" type="MarginContainer" node_paths=PackedStringArray("customer", "dialogue", "animation_player")]
 offset_right = 640.0
 offset_bottom = 1080.0
 script = ExtResource("1_8l806")
-request = ExtResource("2_vci6w")
+request = ExtResource("2_q1pmj")
 customer = NodePath("Customer")
 dialogue = NodePath("Dialogue")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_thip0")
 }
-autoplay = "customer_enter"
 
 [node name="Customer" type="TextureRect" parent="."]
 layout_mode = 2
@@ -103,3 +125,5 @@ vertical_alignment = 1
 autowrap_mode = 3
 justification_flags = 162
 clip_text = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Ingredient/Ingredient.gd" id="1_mgqxl"]
 [ext_resource type="AudioStream" uid="uid://cjqkj34qovnpd" path="res://assets/sfx_items/plant.mp3" id="2_4wnrr"]
-[ext_resource type="Texture2D" uid="uid://bxqmxdl4ot30j" path="res://assets/img_items/plant.png" id="2_rk1k6"]
+[ext_resource type="Texture2D" uid="uid://b10os5bdcp218" path="res://assets/img_items/plant.png" id="2_rk1k6"]
 [ext_resource type="AudioStream" uid="uid://hc4ufegjblna" path="res://assets/sfx_items/plant_drop.mp3" id="3_o4jkj"]
 
 [resource]

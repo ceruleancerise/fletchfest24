@@ -34,8 +34,8 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("10_l1qyh")
 
-[node name="Spacer2" type="ColorRect" parent="MarginContainer2/PropGrid"]
-custom_minimum_size = Vector2(0, 43)
+[node name="Spacer1" type="ColorRect" parent="MarginContainer2/PropGrid"]
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
@@ -58,7 +58,7 @@ size_flags_vertical = 0
 texture = ExtResource("2_6mqj5")
 
 [node name="Spacer2" type="ColorRect" parent="ShelfGrid"]
-custom_minimum_size = Vector2(0, 187)
+custom_minimum_size = Vector2(0, 148)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
@@ -76,5 +76,5 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/h_separation = 80
-theme_override_constants/v_separation = 82
+theme_override_constants/v_separation = 42
 columns = 4
