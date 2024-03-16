@@ -52,6 +52,7 @@ size_flags_vertical = 3
 [node name="PotionActions" parent="Vbox/PotionSceneBottom" instance=ExtResource("8_f386l")]
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_constants/margin_top = 175
 theme_override_constants/margin_right = 32
 
 [connection signal="s_brew_button_pressed" from="Vbox/PotionSceneBottom/PotionActions" to="." method="_on_brew_button_pressed"]

@@ -1,23 +1,79 @@
-[gd_scene load_steps=2 format=3 uid="uid://mio3p1jkorlo"]
+[gd_scene load_steps=6 format=3 uid="uid://mio3p1jkorlo"]
 
 [ext_resource type="Script" path="res://PotionActions/PotionActions.gd" id="1_io2f0"]
+[ext_resource type="Texture2D" uid="uid://cdy7i81lk8ydx" path="res://assets/img_ui/action-bg.png" id="2_ch7qs"]
+[ext_resource type="Texture2D" uid="uid://bwhh4xyn7sasn" path="res://assets/img_ui/button-normal.png" id="3_v34i8"]
+[ext_resource type="Texture2D" uid="uid://bkt4hfwvineb6" path="res://assets/img_ui/button-hover.png" id="4_gn7f6"]
+[ext_resource type="FontFile" uid="uid://cme6hj874j41" path="res://assets/fonts/MadimiOne-Regular.ttf" id="5_xu05h"]
 
 [node name="PotionActions" type="MarginContainer" node_paths=PackedStringArray("audio_player")]
+offset_right = 436.0
+offset_bottom = 298.0
 script = ExtResource("1_io2f0")
 audio_player = NodePath("AudioPlayer")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="ActionsBackground" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_ch7qs")
+
 [node name="VBox" type="VBoxContainer" parent="."]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="BrewButton" type="Button" parent="VBox"]
+[node name="BrewButton" type="TextureButton" parent="VBox"]
 layout_mode = 2
-text = "Brew"
+texture_normal = ExtResource("3_v34i8")
+texture_pressed = ExtResource("4_gn7f6")
+texture_hover = ExtResource("4_gn7f6")
 
-[node name="ClearButton" type="Button" parent="VBox"]
+[node name="Label" type="Label" parent="VBox/BrewButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.278431, 0.101961, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("5_xu05h")
+theme_override_font_sizes/font_size = 24
+text = "Brew Potion"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClearButton" type="TextureButton" parent="VBox"]
 layout_mode = 2
-text = "Clear"
+texture_normal = ExtResource("3_v34i8")
+texture_pressed = ExtResource("4_gn7f6")
+texture_hover = ExtResource("4_gn7f6")
+
+[node name="Label2" type="Label" parent="VBox/ClearButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.278431, 0.101961, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("5_xu05h")
+theme_override_font_sizes/font_size = 24
+text = "Clear Ingredients"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TryCount" type="Label" parent="VBox"]
+custom_minimum_size = Vector2(0, 64.075)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.278431, 0.101961, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("5_xu05h")
+theme_override_font_sizes/font_size = 24
+text = "10 Potions Available"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [connection signal="pressed" from="VBox/BrewButton" to="." method="_on_brew_button_pressed"]
 [connection signal="pressed" from="VBox/ClearButton" to="." method="_on_clear_button_pressed"]

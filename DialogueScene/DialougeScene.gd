@@ -6,10 +6,18 @@ class_name DialogueScene extends Control
 	preload("res://PotionRequests/TestRequest3.tres")
 ]
 
+@onready var potion_textures: Array[Texture2D] = [
+	preload("res://assets/img_potions/blue-potion.png"),
+	# preload("res://assets/img_potions/green-potion.png"),
+	preload("res://assets/img_potions/red-potions.png"),
+	preload("res://assets/img_potions/yellow-potion.png")
+]
+
 @export var request: PotionRequest
 @export var customer: TextureRect
 @export var dialogue: Label
 @export var animation_player: AnimationPlayer
+@export var potion: TextureRect
 
 @onready var requests: Array[PotionRequest]
 var ingredients: Array[Ingredient]
@@ -28,7 +36,8 @@ func submit_potion(submitted_ingredients: Array[Ingredient]):
 	print(i_1 + ", " + i_2)
 	
 	ingredients = submitted_ingredients
-	animation_player.play("potion_enter")
+	
+	potion_exit()
 		
 func check_potion():
 	var matching_tags = get_matching_ingredient_tags(ingredients)
@@ -41,7 +50,7 @@ func check_potion():
 	
 	if (is_sufficient):
 		set_correct_dialogue() 
-		customer_exit()
+		potion_exit_and_take()
 	else:
 		set_hint_dialogue(matching_tags)
 		
@@ -93,14 +102,28 @@ func customer_exit():
 	
 func customer_enter():
 	animation_player.play("customer_enter")
+	
+func potion_enter():
+	potion.set_texture(potion_textures.pick_random())
+	animation_player.play("potion_enter")
+	
+func potion_exit():
+	animation_player.play("potion_exit")
+	
+func potion_exit_and_take():
+	animation_player.play("potion_exit_and_take")
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	match (anim_name):
+		"potion_exit":
+			potion_enter()
 		"potion_enter":
 			check_potion()
 		"customer_exit": 
 			set_random_request()
 			customer_enter()
+		"potion_exit_and_take":
+			customer_exit()
 			
 func set_hint_dialogue(matching_tags: Array[String]):
 	var new_dialogue = ""

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://jkkbvs4glc6a"]
+[gd_scene load_steps=16 format=3 uid="uid://jkkbvs4glc6a"]
 
 [ext_resource type="Script" path="res://DialogueScene/DialougeScene.gd" id="1_8l806"]
 [ext_resource type="Texture2D" uid="uid://8pulf1gouh1k" path="res://assets/img_customers/placeholder.png" id="2_f3yvv"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://yh2halww35lt" path="res://assets/img_props/counter.png" id="4_6kc7g"]
 [ext_resource type="FontFile" uid="uid://cme6hj874j41" path="res://assets/fonts/MadimiOne-Regular.ttf" id="4_e314r"]
 [ext_resource type="Texture2D" uid="uid://yg14lymga3n6" path="res://assets/img_ui/speech-bubble.png" id="5_s8gt5"]
-[ext_resource type="Texture2D" uid="uid://bf3ker2fo1tb" path="res://assets/img_potions/yellow-potion.png" id="6_2xe2f"]
+[ext_resource type="Texture2D" uid="uid://cbjv27tvrts57" path="res://assets/img_potions/blank_potion.png" id="7_bvgny"]
 
 [sub_resource type="Animation" id="Animation_y514y"]
 length = 0.001
@@ -129,6 +129,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_5tc2m"]
 resource_name = "potion_enter"
+length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -137,8 +138,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 1.3, -0.00492464, 1, -0.6, -0.121605, 0.3, 0.0264969),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(0, -0.25, 0, 0.2, 0.803793, 1.01362, -0.5, -0.0262281, 0.3, 0.0311037),
+"times": PackedFloat32Array(0, 0.5)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -148,8 +149,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 1.3, 0.00565404, 1, -0.6, -0.0581326, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
+"points": PackedFloat32Array(0, -0.25, 0, 0.2, 0.85625, 1.00925, -0.5, -0.0305995, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -174,19 +175,71 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_6wbw5"]
+resource_name = "potion_exit"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Potion:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.307681, -0.00386703, 0.773194, -0.192319, 1.62177, 0.124758, -0.826186, 0, -0.692319, -0.00927864, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/Potion:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.307681, 0.000504375, 0.790679, -0.192319, 1.61303, 0.107681, -0.808701, 0, -0.692319, 0.0213208, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 1)
+}
+
+[sub_resource type="Animation" id="Animation_fcd4r"]
+resource_name = "potion_exit_and_take"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Potion:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.307681, -0.00386703, 0.773194, -0.192319, 1.62177, 0.124758, -0.826186, 0, -0.692319, -0.00927864, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/Potion:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.307681, 0.000504375, 0.790679, -0.192319, 1.61303, 0.107681, -0.808701, 0, -0.692319, 0.0213208, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 1)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_thip0"]
 _data = {
 "RESET": SubResource("Animation_y514y"),
 "customer_enter": SubResource("Animation_f3fbw"),
 "customer_exit": SubResource("Animation_bj7y1"),
-"potion_enter": SubResource("Animation_5tc2m")
+"potion_enter": SubResource("Animation_5tc2m"),
+"potion_exit": SubResource("Animation_6wbw5"),
+"potion_exit_and_take": SubResource("Animation_fcd4r")
 }
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nodkq"]
 content_margin_left = 100.0
 content_margin_right = 100.0
 
-[node name="DialougeScene" type="MarginContainer" node_paths=PackedStringArray("customer", "dialogue", "animation_player")]
+[node name="DialougeScene" type="MarginContainer" node_paths=PackedStringArray("customer", "dialogue", "animation_player", "potion")]
 offset_right = 640.0
 offset_bottom = 1080.0
 script = ExtResource("1_8l806")
@@ -194,6 +247,7 @@ request = ExtResource("2_q1pmj")
 customer = NodePath("Customer")
 dialogue = NodePath("MarginContainer2/MarginContainer/Dialogue")
 animation_player = NodePath("AnimationPlayer")
+potion = NodePath("MarginContainer/Potion")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -252,6 +306,6 @@ theme_override_constants/margin_bottom = 120
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-texture = ExtResource("6_2xe2f")
+texture = ExtResource("7_bvgny")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
