@@ -34,20 +34,27 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		preview.add_child(preview_texture)
 	
 		set_drag_preview(preview)
+		
+		preview.connect("tree_exiting", reset_texture)
 	
 	ingredient_texture.set_texture(null)
 	
-	return ingredient_copy
+	return {
+		"ingredient": ingredient_copy,
+		"original_slot": self
+	}
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	return (data is Ingredient) && (!!is_clearable) 
+	return (data.ingredient is Ingredient) && (!!is_clearable) 
 
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	audio_player.set_stream(data.sfx_putdown)
+	audio_player.set_stream(data.ingredient.sfx_putdown)
 	audio_player.play()
 	
-	set_ingredient(data)
-	s_ingredient_changed.emit(data)
+	set_ingredient(data.ingredient)
+	s_ingredient_changed.emit(data.ingredient)
+	
+	data.original_slot.ingredient_texture.set_texture(null)
 	
 func set_ingredient(new_ingredient: Ingredient):
 	ingredient = new_ingredient

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ng5paan00u7q"]
+[gd_scene load_steps=6 format=3 uid="uid://ng5paan00u7q"]
 
 [ext_resource type="Script" path="res://GameScreen/GameScreen.gd" id="1_7246j"]
 [ext_resource type="Texture2D" uid="uid://cfi3lx0cvcdbb" path="res://assets/img_bg/bg.png" id="2_b46ss"]
 [ext_resource type="PackedScene" uid="uid://jkkbvs4glc6a" path="res://DialogueScene/DialougeScene.tscn" id="2_folb2"]
 [ext_resource type="PackedScene" uid="uid://dsomiab3vj3xa" path="res://PotionScene/PotionScene.tscn" id="2_ngijs"]
+[ext_resource type="Texture2D" uid="uid://c64iklt5k2pc2" path="res://assets/img_props/vertical-wall.png" id="5_t4rqd"]
 
 [node name="GameScreen" type="Control"]
 layout_mode = 3
@@ -29,5 +30,16 @@ layout_mode = 2
 
 [node name="PotionScene" parent="Scenes" instance=ExtResource("2_ngijs")]
 layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 100.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 600
+
+[node name="VerticalWall" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("5_t4rqd")
 
 [connection signal="s_potion_brewed" from="Scenes/PotionScene" to="." method="_on_potion_brewed"]

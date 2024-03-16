@@ -4,7 +4,7 @@ var p_IngredientSlot = preload("res://IngredientSlot/IngredientSlot.tscn")
 
 @export var ingredients: Array[Ingredient]
 
-@onready var ingredent_grid = $IngredientGrid
+@onready var ingredent_grid = $MarginContainer/IngredientGrid
 
 var slots: Array[IngredientSlot]
 

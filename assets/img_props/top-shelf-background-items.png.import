@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c16886xvpb8e1"
-path="res://.godot/imported/shoe.png-643dc0e3eddd74efc24ec90f01e825fb.ctex"
+uid="uid://bg7v03ict6jen"
+path="res://.godot/imported/top-shelf-background-items.png-182415ec26a0765e166eb7857d5a5038.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img_items/shoe.png"
-dest_files=["res://.godot/imported/shoe.png-643dc0e3eddd74efc24ec90f01e825fb.ctex"]
+source_file="res://assets/img_props/top-shelf-background-items.png"
+dest_files=["res://.godot/imported/top-shelf-background-items.png-182415ec26a0765e166eb7857d5a5038.ctex"]
 
 [params]
 

@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b150me7q4mai6"]
+[gd_scene load_steps=13 format=3 uid="uid://b150me7q4mai6"]
 
 [ext_resource type="Script" path="res://IngredientShop/IngredientShop.gd" id="1_xc8ox"]
 [ext_resource type="Texture2D" uid="uid://owjiuqfplwqr" path="res://assets/img_props/shelf.png" id="2_6mqj5"]
+[ext_resource type="Resource" uid="uid://c1h76kmn08psi" path="res://Ingredients/Book.tres" id="2_7ieod"]
+[ext_resource type="Resource" uid="uid://bod5ei4qt6k41" path="res://Ingredients/Candle.tres" id="3_lqc84"]
+[ext_resource type="Resource" uid="uid://btj11po3y5ajd" path="res://Ingredients/Candy.tres" id="4_wtfao"]
+[ext_resource type="Resource" uid="uid://bkol28rs1ihs7" path="res://Ingredients/Cinnamon.tres" id="5_a4l8l"]
+[ext_resource type="Resource" uid="uid://ci6b02qt4shj5" path="res://Ingredients/Crystal.tres" id="6_mqdf2"]
+[ext_resource type="Resource" uid="uid://dk711l2vftnam" path="res://Ingredients/Gameboy.tres" id="7_67f3g"]
+[ext_resource type="Resource" uid="uid://cmkvno4v8chtj" path="res://Ingredients/Plant.tres" id="8_65jxr"]
+[ext_resource type="Resource" uid="uid://coo1hyaa5yjl8" path="res://Ingredients/Shoe.tres" id="9_g1hte"]
+[ext_resource type="Texture2D" uid="uid://bg7v03ict6jen" path="res://assets/img_props/top-shelf-background-items.png" id="10_l1qyh"]
+[ext_resource type="Texture2D" uid="uid://br3s4mw2bahh4" path="res://assets/img_props/bottom-shelf-background-items.png" id="11_h7v16"]
 
 [node name="IngredientShop" type="MarginContainer"]
 offset_right = 600.0
@@ -9,12 +19,35 @@ offset_bottom = 100.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_xc8ox")
+ingredients = Array[Resource("res://Ingredient/Ingredient.gd")]([ExtResource("2_7ieod"), ExtResource("3_lqc84"), ExtResource("4_wtfao"), ExtResource("5_a4l8l"), ExtResource("6_mqdf2"), ExtResource("7_67f3g"), ExtResource("8_65jxr"), ExtResource("9_g1hte")])
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+
+[node name="PropGrid" type="GridContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="TopProps" type="TextureRect" parent="MarginContainer2/PropGrid"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10_l1qyh")
+
+[node name="Spacer2" type="ColorRect" parent="MarginContainer2/PropGrid"]
+custom_minimum_size = Vector2(0, 43)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="BottomProps" type="TextureRect" parent="MarginContainer2/PropGrid"]
+layout_mode = 2
+texture = ExtResource("11_h7v16")
 
 [node name="ShelfGrid" type="GridContainer" parent="."]
 layout_mode = 2
 
 [node name="Spacer1" type="ColorRect" parent="ShelfGrid"]
-custom_minimum_size = Vector2(0, 176)
+custom_minimum_size = Vector2(0, 183)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
@@ -25,7 +58,7 @@ size_flags_vertical = 0
 texture = ExtResource("2_6mqj5")
 
 [node name="Spacer2" type="ColorRect" parent="ShelfGrid"]
-custom_minimum_size = Vector2(0, 147)
+custom_minimum_size = Vector2(0, 187)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
@@ -33,8 +66,15 @@ color = Color(1, 1, 1, 0)
 layout_mode = 2
 texture = ExtResource("2_6mqj5")
 
-[node name="IngredientGrid" type="GridContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 10
+
+[node name="IngredientGrid" type="GridContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-columns = 3
+theme_override_constants/h_separation = 80
+theme_override_constants/v_separation = 82
+columns = 4

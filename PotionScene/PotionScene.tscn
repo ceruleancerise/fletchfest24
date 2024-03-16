@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dsomiab3vj3xa"]
+[gd_scene load_steps=13 format=3 uid="uid://dsomiab3vj3xa"]
 
 [ext_resource type="Script" path="res://PotionScene/PotionScene.gd" id="1_dcbq4"]
 [ext_resource type="PackedScene" uid="uid://b150me7q4mai6" path="res://IngredientShop/IngredientShop.tscn" id="1_dpdg8"]
@@ -9,7 +9,9 @@
 [ext_resource type="Resource" uid="uid://c1h76kmn08psi" path="res://Ingredients/Book.tres" id="6_524yr"]
 [ext_resource type="Resource" uid="uid://btj11po3y5ajd" path="res://Ingredients/Candy.tres" id="7_pw7ae"]
 [ext_resource type="PackedScene" uid="uid://mio3p1jkorlo" path="res://PotionActions/PotionActions.tscn" id="8_f386l"]
+[ext_resource type="Resource" uid="uid://dk711l2vftnam" path="res://Ingredients/Gameboy.tres" id="9_csqbk"]
 [ext_resource type="PackedScene" uid="uid://bjjh4ek2nurc2" path="res://IngredientCauldron/IngredientCauldron.tscn" id="9_hvnk5"]
+[ext_resource type="Resource" uid="uid://bod5ei4qt6k41" path="res://Ingredients/Candle.tres" id="10_t36ns"]
 
 [node name="PotionScene" type="MarginContainer" node_paths=PackedStringArray("ingredient_shop")]
 offset_right = 1280.0
@@ -24,9 +26,9 @@ layout_mode = 2
 [node name="IngredientShop" parent="Vbox" instance=ExtResource("1_dpdg8")]
 layout_mode = 2
 size_flags_horizontal = 1
-theme_override_constants/margin_left = 128
-theme_override_constants/margin_top = 24
-ingredients = Array[Resource("res://Ingredient/Ingredient.gd")]([ExtResource("2_fr82w"), ExtResource("3_v35qk"), ExtResource("4_6451n"), ExtResource("5_wc7r5"), ExtResource("6_524yr"), ExtResource("7_pw7ae")])
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 48
+ingredients = Array[Resource("res://Ingredient/Ingredient.gd")]([ExtResource("2_fr82w"), ExtResource("3_v35qk"), ExtResource("4_6451n"), ExtResource("5_wc7r5"), ExtResource("6_524yr"), ExtResource("7_pw7ae"), ExtResource("9_csqbk"), ExtResource("10_t36ns")])
 
 [node name="Spacer" type="BoxContainer" parent="Vbox"]
 layout_mode = 2
@@ -39,6 +41,7 @@ size_flags_vertical = 8
 
 [node name="IngredientCauldron" parent="Vbox/PotionSceneBottom" instance=ExtResource("9_hvnk5")]
 layout_mode = 2
+theme_override_constants/margin_left = 32
 
 [node name="Spacer" type="BoxContainer" parent="Vbox/PotionSceneBottom"]
 layout_mode = 2

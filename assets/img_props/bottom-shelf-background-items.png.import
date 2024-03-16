@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddga77m3ubp2e"
-path="res://.godot/imported/plant.bak.png-c26b34c2bbb881566fc24ca914adf3ff.ctex"
+uid="uid://br3s4mw2bahh4"
+path="res://.godot/imported/bottom-shelf-background-items.png-7b7fcb19ad79cb7523392748b27e528f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img_items/plant.bak.png"
-dest_files=["res://.godot/imported/plant.bak.png-c26b34c2bbb881566fc24ca914adf3ff.ctex"]
+source_file="res://assets/img_props/bottom-shelf-background-items.png"
+dest_files=["res://.godot/imported/bottom-shelf-background-items.png-7b7fcb19ad79cb7523392748b27e528f.ctex"]
 
 [params]
 
