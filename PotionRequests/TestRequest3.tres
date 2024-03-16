@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("2_n6ful")
 tags_required = Array[String](["alive", "valuable", "colorful"])
-dialogue = "REQUEST 3"
+dialogue = "We need to quickly clear rocks from a land slide. Do you have anything to increase my strength?"
 customer = ExtResource("1_10wfq")

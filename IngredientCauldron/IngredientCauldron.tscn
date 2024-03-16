@@ -4,27 +4,38 @@
 [ext_resource type="Texture2D" uid="uid://f0h0s5aqbvec" path="res://assets/img_props/cauldron.png" id="2_5l6e4"]
 [ext_resource type="PackedScene" uid="uid://djdudsvamqqo4" path="res://IngredientSlot/IngredientSlot.tscn" id="3_6t04b"]
 
-[node name="IngredientCauldron" type="MarginContainer" node_paths=PackedStringArray("slot")]
-theme_override_constants/margin_top = 128
+[node name="IngredientCauldron" type="MarginContainer" node_paths=PackedStringArray("slot_1", "slot_2")]
+offset_right = 784.0
+offset_bottom = 381.0
 script = ExtResource("1_7af4e")
 max_ingredient_count = 2
-slot = NodePath("Cauldron/IngredientSlot")
+slot_1 = NodePath("Slots/IngredientSlot1")
+slot_2 = NodePath("Slots/IngredientSlot2")
 
-[node name="Cauldron" type="TextureRect" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
+theme_override_constants/margin_top = 150
+
+[node name="Cauldron" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
 texture = ExtResource("2_5l6e4")
 
-[node name="IngredientSlot" parent="Cauldron" instance=ExtResource("3_6t04b")]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -190.5
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Slots" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="IngredientSlot1" parent="Slots" instance=ExtResource("3_6t04b")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 is_clearable = true
 
-[connection signal="s_ingredient_changed" from="Cauldron/IngredientSlot" to="." method="_on_ingredient_changed"]
+[node name="IngredientSlot2" parent="Slots" node_paths=PackedStringArray("audio_player") instance=ExtResource("3_6t04b")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+audio_player = NodePath("../IngredientSlot1/AudioPlayer")
+is_clearable = true
