@@ -15,3 +15,4 @@ func _on_brew_button_pressed() -> void:
 	s_potion_brewed.emit(ingredients)
 	ingredient_cauldron.clear_slots()
 	ingredient_shop.reset_ingredients()
+

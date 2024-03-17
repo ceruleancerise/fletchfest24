@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="Ingredient" load_steps=4 format=3 uid="uid://bod5ei4qt6k41"]
+[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://bod5ei4qt6k41"]
 
 [ext_resource type="Script" path="res://Ingredient/Ingredient.gd" id="1_a6fln"]
-[ext_resource type="AudioStream" uid="uid://n0h0pc38qgtr" path="res://assets/sfx_ui/cauldron_clear.wav" id="2_tepgq"]
-[ext_resource type="Texture2D" uid="uid://igb287wnhy0x" path="res://assets/img_items/candle.png" id="3_ahb2k"]
+[ext_resource type="AudioStream" uid="uid://nag0k3rnylcw" path="res://assets/sfx_items/candle.wav" id="2_siaoy"]
+[ext_resource type="AudioStream" uid="uid://bphbb56upbgik" path="res://assets/sfx_items/candle_drop.wav" id="3_6quc7"]
+[ext_resource type="Texture2D" uid="uid://djpqegyxjdnmx" path="res://assets/img_items/candle.png" id="3_ahb2k"]
 
 [resource]
 script = ExtResource("1_a6fln")
 title = "Candle"
 tags = Array[String]([])
 texture = ExtResource("3_ahb2k")
-sfx_pickup = ExtResource("2_tepgq")
-sfx_putdown = ExtResource("2_tepgq")
+sfx_pickup = ExtResource("2_siaoy")
+sfx_putdown = ExtResource("3_6quc7")

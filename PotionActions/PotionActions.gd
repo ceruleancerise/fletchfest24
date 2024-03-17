@@ -9,17 +9,15 @@ signal s_clear_button_pressed()
 @export var audio_player: AudioStreamPlayer
 @export var try_count: Label
 
-const MAX_POTION_COUNT = 10 
-var potion_count = MAX_POTION_COUNT
-
 func update_try_count():
-	try_count.set_text(str(potion_count) + " Potions Left")
+	try_count.set_text(str(Global.try_count) + " Potions Left")
 
 func _on_brew_button_pressed() -> void:
+	if (!Global.is_action_allowed): return
 	s_brew_button_pressed.emit()
 	audio_player.set_stream(sfx_brew)
 	audio_player.play()
-	potion_count -= 1
+	Global.try_count -= 1
 	update_try_count()
 
 func _on_clear_button_pressed() -> void:

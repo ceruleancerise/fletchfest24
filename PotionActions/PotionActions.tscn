@@ -14,6 +14,7 @@ audio_player = NodePath("AudioPlayer")
 try_count = NodePath("VBox/TryCount")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 
 [node name="ActionsBackground" type="TextureRect" parent="."]
 layout_mode = 2

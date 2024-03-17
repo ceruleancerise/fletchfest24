@@ -42,4 +42,5 @@ layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("5_t4rqd")
 
+[connection signal="s_game_finished" from="Scenes/DialougeScene" to="." method="_on_game_finished"]
 [connection signal="s_potion_brewed" from="Scenes/PotionScene" to="." method="_on_potion_brewed"]
