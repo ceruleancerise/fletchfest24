@@ -16,7 +16,7 @@ func _ready() -> void:
 	else:
 		ingredient_texture.set_texture(null)
 
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(_at_position: Vector2) -> Variant:
 	
 	if (!ingredient): return
 	
@@ -46,10 +46,10 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		"original_slot": self
 	}
 
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return (data.ingredient is Ingredient) && (!!is_clearable) 
 
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	audio_player.set_stream(data.ingredient.sfx_putdown)
 	audio_player.play()
 	

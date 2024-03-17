@@ -108,11 +108,11 @@ func check_potion():
 	ingredients = []
 
 # Terrible algorithm 
-func get_matching_ingredient_tags(ingredients: Array[Ingredient]) -> Array[String]:
+func get_matching_ingredient_tags(new_ingredients: Array[Ingredient]) -> Array[String]:
 	var matching_tags: Array[String] = []
 	
 	for required_tag in request.tags_required:
-		for ingredient in ingredients:
+		for ingredient in new_ingredients:
 			if (!ingredient): continue
 			for tag in ingredient.tags:
 				if (required_tag == tag):

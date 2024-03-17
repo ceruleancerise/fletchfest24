@@ -1,8 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://jkkbvs4glc6a"]
+[gd_scene load_steps=20 format=3 uid="uid://jkkbvs4glc6a"]
 
 [ext_resource type="Script" path="res://DialogueScene/DialougeScene.gd" id="1_8l806"]
 [ext_resource type="Texture2D" uid="uid://8pulf1gouh1k" path="res://assets/img_customers/placeholder.png" id="2_f3yvv"]
-[ext_resource type="Resource" uid="uid://grppuln6oai3" path="res://PotionRequests/TestRequest1.tres" id="2_q1pmj"]
 [ext_resource type="Texture2D" uid="uid://yh2halww35lt" path="res://assets/img_props/counter.png" id="4_6kc7g"]
 [ext_resource type="FontFile" uid="uid://cme6hj874j41" path="res://assets/fonts/MadimiOne-Regular.ttf" id="4_e314r"]
 [ext_resource type="Texture2D" uid="uid://yg14lymga3n6" path="res://assets/img_ui/speech-bubble.png" id="5_s8gt5"]
@@ -445,7 +444,6 @@ offset_bottom = 1080.0
 script = ExtResource("1_8l806")
 audio_player = NodePath("AudioPlayer")
 dialogue_audio_player = NodePath("DialogueAudioPlayer")
-request = ExtResource("2_q1pmj")
 customer = NodePath("Customer")
 dialogue_container = NodePath("DialogContainer")
 dialogue = NodePath("DialogContainer/MarginContainer/Dialogue")
