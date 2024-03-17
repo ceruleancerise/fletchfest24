@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dk4wq0d8nm5fi"]
+[gd_scene load_steps=11 format=3 uid="uid://dk4wq0d8nm5fi"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_12cjv"]
 [ext_resource type="FontFile" uid="uid://cme6hj874j41" path="res://assets/fonts/MadimiOne-Regular.ttf" id="2_1qpwa"]
-[ext_resource type="PackedScene" uid="uid://bpgpv4wuvrvrd" path="res://TitleScreen/TitleScreen.tscn" id="2_duwjy"]
 [ext_resource type="Texture2D" uid="uid://0wjjani87hjo" path="res://assets/img_potions/green-potion.png" id="2_ij7te"]
 
 [sub_resource type="Animation" id="Animation_wk8os"]
@@ -192,6 +191,9 @@ _data = {
 [node name="Game" type="Node"]
 script = ExtResource("1_12cjv")
 
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -7.777
+
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -10.0
 
@@ -239,8 +241,4 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TitleScreen" parent="ScreenContainer" instance=ExtResource("2_duwjy")]
-layout_mode = 1
-
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
-[connection signal="s_start_button_pressed" from="ScreenContainer/TitleScreen" to="." method="_on_start_button_pressed"]
