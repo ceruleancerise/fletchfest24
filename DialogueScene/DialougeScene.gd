@@ -13,16 +13,23 @@ class_name DialogueScene extends Control
 	preload("res://assets/img_potions/yellow-potion.png")
 ]
 
+@onready var blank_potion_texture = preload("res://assets/img_potions/blank_potion.png")
+
 @export var request: PotionRequest
 @export var customer: TextureRect
+@export var dialogue_container: Control
 @export var dialogue: Label
 @export var animation_player: AnimationPlayer
+@export var dialogue_animation_player: AnimationPlayer
 @export var potion: TextureRect
+
 
 @onready var requests: Array[PotionRequest]
 var ingredients: Array[Ingredient]
 
 func _ready() -> void:
+	dialogue_animation_player.play("speech_init")
+	potion.set_texture(blank_potion_texture)
 	reset_requests()
 	set_random_request()
 	customer_enter()
@@ -38,6 +45,7 @@ func submit_potion(submitted_ingredients: Array[Ingredient]):
 	ingredients = submitted_ingredients
 	
 	potion_exit()
+	dialogue_animation_player.play("speech_exit")
 		
 func check_potion():
 	var matching_tags = get_matching_ingredient_tags(ingredients)
@@ -99,6 +107,8 @@ func set_request(new_request: PotionRequest):
 	
 func customer_exit():
 	animation_player.play("customer_exit")
+	dialogue_animation_player.play("speech_exit")
+	potion.set_texture(blank_potion_texture)
 	
 func customer_enter():
 	animation_player.play("customer_enter")
@@ -119,11 +129,16 @@ func _on_animation_finished(anim_name: StringName) -> void:
 			potion_enter()
 		"potion_enter":
 			check_potion()
+		"customer_enter":
+			dialogue_animation_player.play("speech_enter")
 		"customer_exit": 
 			set_random_request()
 			customer_enter()
 		"potion_exit_and_take":
 			customer_exit()
+			
+func _on_dialogue_animation_finished(anim_name: StringName) -> void:
+	pass # Replace with function body.
 			
 func set_hint_dialogue(matching_tags: Array[String]):
 	var new_dialogue = ""
@@ -141,7 +156,11 @@ func set_hint_dialogue(matching_tags: Array[String]):
 	new_dialogue = new_dialogue + "\n" + request.dialogue
 	
 	dialogue.set_text(new_dialogue)
+	dialogue_animation_player.play("speech_enter")
 		
 
 func set_correct_dialogue():
 	dialogue.set_text("That's it!\nThanks so much for your help!")
+	dialogue_animation_player.play("speech_enter")
+
+

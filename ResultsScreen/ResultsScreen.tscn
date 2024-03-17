@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdvi76sy6mcef"]
+
+[ext_resource type="Script" path="res://ResultsScreen/ResultsScreen.gd" id="1_t5lfx"]
+[ext_resource type="Texture2D" uid="uid://72exvfppwsvh" path="res://assets/img_bg/start-bg.png" id="2_dk6n7"]
+[ext_resource type="Texture2D" uid="uid://bwhh4xyn7sasn" path="res://assets/img_ui/button-normal.png" id="3_qwcd8"]
+[ext_resource type="Texture2D" uid="uid://bkt4hfwvineb6" path="res://assets/img_ui/button-hover.png" id="4_3rx4q"]
+
+[node name="ResultsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5lfx")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_dk6n7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 281.0
+offset_right = 1018.0
+offset_bottom = 304.0
+text = "nice job bro"
+
+[node name="MenuButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 378.0
+offset_right = 1141.0
+offset_bottom = 439.0
+texture_normal = ExtResource("3_qwcd8")
+texture_pressed = ExtResource("4_3rx4q")
+texture_hover = ExtResource("4_3rx4q")
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

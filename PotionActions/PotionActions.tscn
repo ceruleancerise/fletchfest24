@@ -6,11 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bkt4hfwvineb6" path="res://assets/img_ui/button-hover.png" id="4_gn7f6"]
 [ext_resource type="FontFile" uid="uid://cme6hj874j41" path="res://assets/fonts/MadimiOne-Regular.ttf" id="5_xu05h"]
 
-[node name="PotionActions" type="MarginContainer" node_paths=PackedStringArray("audio_player")]
+[node name="PotionActions" type="MarginContainer" node_paths=PackedStringArray("audio_player", "try_count")]
 offset_right = 436.0
 offset_bottom = 298.0
 script = ExtResource("1_io2f0")
 audio_player = NodePath("AudioPlayer")
+try_count = NodePath("VBox/TryCount")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 

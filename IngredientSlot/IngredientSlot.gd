@@ -13,6 +13,8 @@ signal s_ingredient_changed(ingredient: Ingredient)
 func _ready() -> void:
 	if (!!ingredient):
 		ingredient_texture.set_texture(ingredient.texture)
+	else:
+		ingredient_texture.set_texture(null)
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	

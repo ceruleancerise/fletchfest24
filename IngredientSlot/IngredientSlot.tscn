@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://djdudsvamqqo4"]
+[gd_scene load_steps=3 format=3 uid="uid://djdudsvamqqo4"]
 
 [ext_resource type="Script" path="res://IngredientSlot/IngredientSlot.gd" id="2_5lj8h"]
+[ext_resource type="Texture2D" uid="uid://0wjjani87hjo" path="res://assets/img_potions/green-potion.png" id="2_cpaq5"]
 
 [node name="IngredientSlot" type="ColorRect" node_paths=PackedStringArray("audio_player")]
 custom_minimum_size = Vector2(200, 200)
@@ -12,5 +13,6 @@ audio_player = NodePath("AudioPlayer")
 
 [node name="IngredientTexture" type="TextureRect" parent="."]
 layout_mode = 2
+texture = ExtResource("2_cpaq5")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
