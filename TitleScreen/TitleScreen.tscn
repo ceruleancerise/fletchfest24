@@ -103,7 +103,8 @@ grow_vertical = 2
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("11_xna8t")
 theme_override_font_sizes/font_size = 24
-text = "made for fletchfest 2024        
+text = "v0.1.0
+made for fletchfest 2024        
 hosted by fletchmakes
 
 "
