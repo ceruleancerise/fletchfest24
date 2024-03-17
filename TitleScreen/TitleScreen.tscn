@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpgpv4wuvrvrd"]
+[gd_scene load_steps=13 format=3 uid="uid://bpgpv4wuvrvrd"]
 
 [ext_resource type="Script" path="res://TitleScreen/TitleScreen.gd" id="1_xbfbt"]
 [ext_resource type="Texture2D" uid="uid://72exvfppwsvh" path="res://assets/img_bg/start-bg.png" id="1_y6o2i"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bwhh4xyn7sasn" path="res://assets/img_ui/button-normal.png" id="8_573qm"]
 [ext_resource type="Texture2D" uid="uid://vh3b4sy17lay" path="res://assets/img_ui/logo.png" id="8_v604m"]
 [ext_resource type="Texture2D" uid="uid://bkt4hfwvineb6" path="res://assets/img_ui/button-hover.png" id="9_s7otc"]
+[ext_resource type="FontFile" uid="uid://cme6hj874j41" path="res://assets/fonts/MadimiOne-Regular.ttf" id="11_xna8t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ie58p"]
 animations = [{
@@ -66,13 +67,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 190
+theme_override_constants/margin_top = 120
 
 [node name="Logo" type="TextureRect" parent="LogoContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 texture = ExtResource("8_v604m")
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("11_xna8t")
+theme_override_font_sizes/font_size = 24
+text = "        art by melosprout
+        developed by ceruleancerise
+        music by leaflet
+
+"
+vertical_alignment = 2
+
+[node name="Credits2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("11_xna8t")
+theme_override_font_sizes/font_size = 24
+text = "made for fletchfest 2024        
+hosted by fletchmakes
+
+"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="StartButton" type="TextureButton" parent="."]
 layout_mode = 1
@@ -81,10 +117,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -174.0
-offset_top = 348.0
-offset_right = 162.0
-offset_bottom = 409.0
+offset_left = -180.0
+offset_top = -55.0
+offset_right = 156.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("8_573qm")
