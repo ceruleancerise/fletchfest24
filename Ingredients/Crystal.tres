@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_kvjlq")
 title = "Crystal"
-tags = Array[String](["transparent", "sparkly", "colorful", "valuable"])
+tags = Array[String](["beautiful", "colorful", "valuable", "sparkly", "fragile", "transparent"])
 texture = ExtResource("2_n4ft7")
 sfx_pickup = ExtResource("2_scfxs")
 sfx_putdown = ExtResource("3_7ucfo")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://fs220l62i3w2"]
+
+[ext_resource type="Texture2D" uid="uid://lfuukne2u8pp" path="res://assets/img_customers/james.png" id="1_0uu63"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="1_2fp76"]
+
+[resource]
+script = ExtResource("1_2fp76")
+tags_required = Array[String](["healing", "growthful", "speedy"])
+dialogue = "My plant is dying and it needs help quick. Do you have a potion to work on plants?"
+customer = ExtResource("1_0uu63")

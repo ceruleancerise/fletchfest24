@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://cmewo2nkm2ca4"]
+
+[ext_resource type="Texture2D" uid="uid://dtj36jvyekgog" path="res://assets/img_customers/tired-girl.png" id="1_ptuha"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_1vwsa"]
+
+[resource]
+script = ExtResource("2_1vwsa")
+tags_required = Array[String](["aromatic", "calming"])
+dialogue = "I heard that certain aroma’s could help me relax. Do you have a potion that can calm my stress a bit?"
+customer = ExtResource("1_ptuha")

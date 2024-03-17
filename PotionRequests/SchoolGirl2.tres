@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://bqwuo3rmvgufm"]
+
+[ext_resource type="Texture2D" uid="uid://d256k0fwauw63" path="res://assets/img_customers/school-girl.png" id="1_0n3he"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_jlglc"]
+
+[resource]
+script = ExtResource("2_jlglc")
+tags_required = Array[String](["entertaining", "thought-provoking"])
+dialogue = "I have a test I need to study for. Do you have a potion that could help make studying less boring?"
+customer = ExtResource("1_0n3he")

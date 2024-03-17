@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://h1c7u6mctnsy"]
+
+[ext_resource type="Texture2D" uid="uid://bxdlhsdpvexxi" path="res://assets/img_customers/vampire-girl.png" id="1_llrvf"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_rxdhp"]
+
+[resource]
+script = ExtResource("2_rxdhp")
+tags_required = Array[String](["healing", "sweet"])
+dialogue = "My girlfriend is sick and she hates bitter medicine. Do you have anything to help her get better?"
+customer = ExtResource("1_llrvf")

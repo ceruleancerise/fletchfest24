@@ -17,6 +17,8 @@ extends Node
 @onready var music_player = $MusicPlayer
 
 func _ready() -> void:
+	# Artificial wait 
+	# Sometimes web version gets jittery initially
 	var timer = Timer.new()
 	add_child(timer)
 	timer.set_wait_time(.777)

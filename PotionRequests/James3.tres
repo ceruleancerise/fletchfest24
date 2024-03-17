@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://bup1molyot850"]
+
+[ext_resource type="Texture2D" uid="uid://lfuukne2u8pp" path="res://assets/img_customers/james.png" id="1_81tq8"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_bqsvb"]
+
+[resource]
+script = ExtResource("2_bqsvb")
+tags_required = Array[String](["efficient", "speedy", "entertaining", "puzzling"])
+dialogue = "I'm making a game and I need to make it more fun! The deadline is tomorrow! Could you help me?"
+customer = ExtResource("1_81tq8")

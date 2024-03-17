@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://stka3eshj7q"]
+
+[ext_resource type="Texture2D" uid="uid://di1jvntnpbyi1" path="res://assets/img_customers/elf-2.png" id="1_ilgbg"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_oqon7"]
+
+[resource]
+script = ExtResource("2_oqon7")
+tags_required = Array[String](["valuable", "beautiful", "calming"])
+dialogue = "I’m nervous to meet my girlfriend’s parents and really want them to see my value and beauty. Do you have a potion for that?"
+customer = ExtResource("1_ilgbg")

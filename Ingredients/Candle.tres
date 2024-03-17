@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_a6fln")
 title = "Candle"
-tags = Array[String]([])
+tags = Array[String](["warm", "aromatic", "luminous", "waxy", "flammable", "smoky"])
 texture = ExtResource("3_ahb2k")
 sfx_pickup = ExtResource("2_siaoy")
 sfx_putdown = ExtResource("3_6quc7")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://epwohp12vdtl"]
+
+[ext_resource type="Texture2D" uid="uid://dtj36jvyekgog" path="res://assets/img_customers/tired-girl.png" id="1_i383b"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_ls2om"]
+
+[resource]
+script = ExtResource("2_ls2om")
+tags_required = Array[String](["fragile", "puzzling"])
+dialogue = "My coworker is always playing pranks on me. I want to get revenge by sabotaging his chair at work without him knowing. Any ideas?"
+customer = ExtResource("1_i383b")

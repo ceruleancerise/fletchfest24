@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_sdmj6")
 title = "Shoe"
-tags = Array[String](["leathery", "speedy", "stylish"])
+tags = Array[String](["efficient", "speedy", "stylish", "floating", "leathery", "stylish"])
 texture = ExtResource("2_kiaob")
 sfx_pickup = ExtResource("2_3higu")
 sfx_putdown = ExtResource("3_7520u")

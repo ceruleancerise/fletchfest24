@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://bog1npb7sd1qt"]
+
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="1_qvhix"]
+[ext_resource type="Texture2D" uid="uid://d256k0fwauw63" path="res://assets/img_customers/school-girl.png" id="1_yjrkk"]
+
+[resource]
+script = ExtResource("1_qvhix")
+tags_required = Array[String](["knowledgable", "wordy", "warm"])
+dialogue = "I’m getting cold feet for a presentation I have to give for school. I’m worried I’ll forget my lines."
+customer = ExtResource("1_yjrkk")

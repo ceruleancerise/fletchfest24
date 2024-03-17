@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://u63mwgmunb6n"]
+
+[ext_resource type="Texture2D" uid="uid://bkkcab1ef0uih" path="res://assets/img_customers/dwarf-man.png" id="1_q34rg"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="1_qcjri"]
+
+[resource]
+script = ExtResource("1_qcjri")
+tags_required = Array[String](["youthful", "nostalgic", "sweet"])
+dialogue = "Can you make a potion that fills me with nostalgia and reminds me of my sweet youth?"
+customer = ExtResource("1_q34rg")

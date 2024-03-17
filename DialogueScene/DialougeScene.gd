@@ -13,9 +13,34 @@ signal s_game_finished()
 @onready var sfx_potion_wrong = preload("res://assets/sfx_ui/potion_wrong.wav")
 
 @onready var request_library: Array[PotionRequest] = [
-	preload("res://PotionRequests/TestRequest1.tres"),
-	preload("res://PotionRequests/TestRequest2.tres"),
-	preload("res://PotionRequests/TestRequest3.tres")
+	preload("res://PotionRequests/Dwarf1.tres"),
+	preload("res://PotionRequests/Dwarf2.tres"),
+	preload("res://PotionRequests/Dwarf3.tres"),
+	preload("res://PotionRequests/ElfBoy1.tres"),
+	preload("res://PotionRequests/ElfBoy2.tres"),
+	preload("res://PotionRequests/ElfBoy3.tres"),
+	preload("res://PotionRequests/ElfGirl1.tres"),
+	preload("res://PotionRequests/ElfGirl2.tres"),
+	preload("res://PotionRequests/ElfGirl3.tres"),
+	preload("res://PotionRequests/James1.tres"),
+	preload("res://PotionRequests/James2.tres"),
+	preload("res://PotionRequests/James3.tres"),
+	preload("res://PotionRequests/Jessica1.tres"),
+	preload("res://PotionRequests/Jessica2.tres"),
+	preload("res://PotionRequests/Jessica3.tres"),
+	preload("res://PotionRequests/Orc1.tres"),
+	preload("res://PotionRequests/Orc2.tres"),
+	preload("res://PotionRequests/Orc3.tres"),
+	preload("res://PotionRequests/SchoolGirl1.tres"),
+	preload("res://PotionRequests/SchoolGirl2.tres"),
+	preload("res://PotionRequests/SchoolGirl3.tres"),
+	preload("res://PotionRequests/TiredGirl1.tres"),
+	preload("res://PotionRequests/TiredGirl2.tres"),
+	preload("res://PotionRequests/TiredGirl3.tres"),
+	preload("res://PotionRequests/TiredGirl4.tres"),
+	preload("res://PotionRequests/VampireGirl1.tres"),
+	preload("res://PotionRequests/VampireGirl2.tres"),
+	preload("res://PotionRequests/VampireGirl3.tres"),
 ]
 
 @onready var potion_textures: Array[Texture2D] = [

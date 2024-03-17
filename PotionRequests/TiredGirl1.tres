@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://bssttqdy2fdsj"]
+
+[ext_resource type="Texture2D" uid="uid://dtj36jvyekgog" path="res://assets/img_customers/tired-girl.png" id="1_2obkb"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="1_ydmgp"]
+
+[resource]
+script = ExtResource("1_ydmgp")
+tags_required = Array[String](["beautiful", "calming"])
+dialogue = "I get seasonal depression in the winter. Do you have something that could help with that?"
+customer = ExtResource("1_2obkb")

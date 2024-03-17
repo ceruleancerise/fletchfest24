@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_0ihpe")
 title = "Cinnamon"
-tags = Array[String](["aromatic", "earthy", "brown"])
+tags = Array[String](["aromatic", "spicy", "festive", "calming", "natural", "woodsy"])
 texture = ExtResource("2_y8fmr")
 sfx_pickup = ExtResource("2_hxor6")
 sfx_putdown = ExtResource("3_77d5i")

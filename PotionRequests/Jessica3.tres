@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://bw8000chan4if"]
+
+[ext_resource type="Texture2D" uid="uid://dng00qe5tq3tr" path="res://assets/img_customers/melosprout.png" id="1_v354p"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_obtwh"]
+
+[resource]
+script = ExtResource("2_obtwh")
+tags_required = Array[String](["natural", "woodsy", "youthful"])
+dialogue = "I love living in the city, but sometimes I miss being out in nature! Do you have anything that help me remember my childhood?"
+customer = ExtResource("1_v354p")
