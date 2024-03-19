@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_b2bl1")
 title = "Gameboy"
-tags = Array[String](["electronic", "youthful", "nostalgic", "youthful", "entertaining", "puzzling"])
+tags = Array[String](["electronic", "youthful", "nostalgic", "entertaining", "puzzling"])
 texture = ExtResource("3_1qjtj")
 sfx_pickup = ExtResource("2_yuiuq")
 sfx_putdown = ExtResource("3_h0sre")

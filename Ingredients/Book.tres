@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_o6kkj")
 title = "Book"
-tags = Array[String](["powerful", "knowledgable", "flammable", "thought-provoking", "wordy", "puzzling"])
+tags = Array[String](["knowledgable", "flammable", "thought-provoking", "wordy", "puzzling"])
 texture = ExtResource("2_kl6pv")
 sfx_pickup = ExtResource("2_l1v2u")
 sfx_putdown = ExtResource("3_mr5kh")

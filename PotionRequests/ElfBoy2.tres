@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("2_3nytu")
-tags_required = Array[String](["calming", "powerful"])
-dialogue = "I'm off to train as a swordsman, but I'm afraid I might not be strong enough. Do you have anything that could help?"
+tags_required = Array[String](["flammable", "warm", "thought-provoking", "wordy"])
+dialogue = "I always forget my adventure log and a light for my campfire when I go out on a quest. Do you have a potion that will help me remember?"
 customer = ExtResource("1_xt1ba")

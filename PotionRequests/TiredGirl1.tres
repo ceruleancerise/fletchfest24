@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_ydmgp")
-tags_required = Array[String](["beautiful", "calming"])
-dialogue = "I get seasonal depression in the winter. Do you have something that could help with that?"
+tags_required = Array[String](["beautiful", "warm"])
+dialogue = "I get seasonal depression in the winter. Do you have a potion that could warm me up and brighten my day?"
 customer = ExtResource("1_2obkb")

@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_7h24n")
 tags_required = Array[String](["natural", "beautiful"])
-dialogue = "I need a better skin care routine, but I'm allergic to certain substances. Do you have anything simple that I can use instead?"
+dialogue = "I am trying to improve my beauty with an all-natural skin cleanser. Do you have a potion I can use?"
 customer = ExtResource("1_nrgig")

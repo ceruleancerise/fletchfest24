@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_mgqxl")
 title = "Plant"
-tags = Array[String](["growthful", "medicinal", "healing", "natural", "lively", "leafy"])
+tags = Array[String](["medicinal", "healing", "natural", "lively", "leafy"])
 texture = ExtResource("2_rk1k6")
 sfx_pickup = ExtResource("2_4wnrr")
 sfx_putdown = ExtResource("3_o4jkj")

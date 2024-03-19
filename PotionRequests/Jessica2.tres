@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("2_yj73d")
-tags_required = Array[String](["colorful", "growthful"])
-dialogue = "I'm working on an art piece but my pencil crayons are so overused and tiny! Any way I can remedy that without having to go buy a new set?"
+tags_required = Array[String](["colorful", "healing"])
+dialogue = "I'm working on an art piece but my colored pencils broke! Any way I can remedy that without having to buy a new set?"
 customer = ExtResource("1_yx2bl")

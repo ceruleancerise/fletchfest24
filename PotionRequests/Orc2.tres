@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("2_fajpq")
-tags_required = Array[String](["lively", "luminous"])
-dialogue = "Whenever I visit the local cavern my light fails me. Do you have a potion that could have lights follow me around?"
+tags_required = Array[String](["sparkly", "luminous"])
+dialogue = "Whenever I visit the local cavern, my light fails me. Do you have a potion that could make me glow and sparkle so it isn’t too dark?"
 customer = ExtResource("1_e55fh")

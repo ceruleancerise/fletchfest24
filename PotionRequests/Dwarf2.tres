@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_qcjri")
-tags_required = Array[String](["youthful", "nostalgic", "sweet"])
-dialogue = "Can you make a potion that fills me with nostalgia and reminds me of my sweet youth?"
+tags_required = Array[String](["youthful", "nostalgic", "natural"])
+dialogue = "I miss my childhood. Can you make a potion that reminds me of my youth, living in the woods?"
 customer = ExtResource("1_q34rg")

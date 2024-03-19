@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("2_oqon7")
-tags_required = Array[String](["valuable", "beautiful", "calming"])
-dialogue = "I’m nervous to meet my girlfriend’s parents and really want them to see my value and beauty. Do you have a potion for that?"
+tags_required = Array[String](["aromatic", "valuable"])
+dialogue = "I love buying expensive gifts for my girlfriend! What is your fanciest and aromatic potion that she can use as perfume?"
 customer = ExtResource("1_ilgbg")

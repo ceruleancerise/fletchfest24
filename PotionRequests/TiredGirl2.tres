@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("2_1vwsa")
 tags_required = Array[String](["aromatic", "calming"])
-dialogue = "I heard that certain aroma’s could help me relax. Do you have a potion that can calm my stress a bit?"
+dialogue = "I heard that certain aromas could help me relax. Do you have a potion that can calm my stress a bit?"
 customer = ExtResource("1_ptuha")

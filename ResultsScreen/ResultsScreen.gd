@@ -29,17 +29,15 @@ func set_letter_grade():
 	elif (percentage >= 0.79):
 		grade = "B"
 	elif (percentage >= 0.69):
-		grade = "C+"
-	elif (percentage >= 0.69):
-		grade = "C"	
+		grade = "B-"
 	elif (percentage >= 0.59):
-		grade = "C-"	
+		grade = "C"
 	elif (percentage >= 0.49):
-		grade = "D"	
+		grade = "C-"
 	elif (percentage >= 0.39):
-		grade = "E"	
+		grade = "D"
 	else:
-		grade = "F"	
+		grade = "F"
 	
 	letter_grade.set_text(grade)
 	
@@ -57,8 +55,6 @@ func set_letter_grade_description():
 		description = "Well done!\nA greatly skilled apothecary is always appreciated!"
 	elif (percentage >= 0.69):
 		description = "Great work!\nYou've shown skill in potion making!"
-	elif (percentage >= 0.69):
-		description = "Good job!\nYou have the sufficient skill to be an apothecary!"	
 	elif (percentage >= 0.59):
 		description = "Alright!\nDespites some mistakes, you brewed some good potions!"	
 	elif (percentage >= 0.49):

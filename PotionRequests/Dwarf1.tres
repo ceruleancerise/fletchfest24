@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_6l7kd")
 tags_required = Array[String](["efficient", "speedy", "warm"])
-dialogue = "With winter coming I need something to keep me warm while I make all these deliveries. We get a ton during the holidays."
+dialogue = "I’m dreading the delivery rush during winter. It’s always so cold and the snow slows me down. Got anything that could help?"
 customer = ExtResource("1_jlwtt")
