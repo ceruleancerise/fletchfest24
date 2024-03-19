@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://bn6r4ehpooqkx"]
+
+[ext_resource type="Texture2D" uid="uid://bkkcab1ef0uih" path="res://assets/img_customers/dwarf-man.png" id="1_tufhg"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_hxaxq"]
+
+[resource]
+script = ExtResource("2_hxaxq")
+tags_required = Array[String](["healing", "valuable"])
+dialogue = "I've accidentally broken a valuable pendant that my daughter gifted me! Is there a potion that could fix it?"
+customer = ExtResource("1_tufhg")

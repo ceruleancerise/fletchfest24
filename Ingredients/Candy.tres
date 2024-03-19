@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://btj11po3y5ajd"]
+
+[ext_resource type="Script" path="res://Ingredient/Ingredient.gd" id="1_hxc6o"]
+[ext_resource type="AudioStream" uid="uid://1dq8jnkafabv" path="res://assets/sfx_items/candy.wav" id="2_egl0f"]
+[ext_resource type="Texture2D" uid="uid://di2fo4lqx6dg6" path="res://assets/img_items/candy.png" id="2_h6py2"]
+[ext_resource type="AudioStream" uid="uid://blt066b5pkdg2" path="res://assets/sfx_items/candy_drop.wav" id="3_7wvvt"]
+
+[resource]
+script = ExtResource("1_hxc6o")
+title = "Candy"
+tags = Array[String](["sweet", "romantic", "youthful", "crinkly", "edible", "wrapped"])
+texture = ExtResource("2_h6py2")
+sfx_pickup = ExtResource("2_egl0f")
+sfx_putdown = ExtResource("3_7wvvt")

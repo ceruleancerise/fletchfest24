@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://dpe8ep4uwalqp"]
+
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="1_6l7kd"]
+[ext_resource type="Texture2D" uid="uid://bkkcab1ef0uih" path="res://assets/img_customers/dwarf-man.png" id="1_jlwtt"]
+
+[resource]
+script = ExtResource("1_6l7kd")
+tags_required = Array[String](["efficient", "speedy", "warm"])
+dialogue = "I’m dreading the delivery rush during winter. It’s always so cold and the snow slows me down. Got anything that could help?"
+customer = ExtResource("1_jlwtt")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://5foijhvuy1px"]
+
+[ext_resource type="Texture2D" uid="uid://b8qc6wf3mh5er" path="res://assets/img_customers/elf-boy.png" id="1_6g0w0"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="1_t6q6e"]
+
+[resource]
+script = ExtResource("1_t6q6e")
+tags_required = Array[String](["efficient", "speedy", "healing"])
+dialogue = "My sister is sick but has a wedding in a couple days so I need something to help her get over her cold quickly."
+customer = ExtResource("1_6g0w0")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://ci6b02qt4shj5"]
+
+[ext_resource type="Script" path="res://Ingredient/Ingredient.gd" id="1_kvjlq"]
+[ext_resource type="Texture2D" uid="uid://fnqbd3ku8uno" path="res://assets/img_items/crystal.png" id="2_n4ft7"]
+[ext_resource type="AudioStream" uid="uid://cm5e7306fe42y" path="res://assets/sfx_items/crystal.wav" id="2_scfxs"]
+[ext_resource type="AudioStream" uid="uid://cqhjcbiugo00e" path="res://assets/sfx_items/crystal_drop.wav" id="3_7ucfo"]
+
+[resource]
+script = ExtResource("1_kvjlq")
+title = "Crystal"
+tags = Array[String](["beautiful", "colorful", "valuable", "sparkly", "fragile", "transparent"])
+texture = ExtResource("2_n4ft7")
+sfx_pickup = ExtResource("2_scfxs")
+sfx_putdown = ExtResource("3_7ucfo")

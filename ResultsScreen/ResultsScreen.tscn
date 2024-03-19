@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdvi76sy6mcef"]
+
+[ext_resource type="Script" path="res://ResultsScreen/ResultsScreen.gd" id="1_t5lfx"]
+[ext_resource type="Texture2D" uid="uid://72exvfppwsvh" path="res://assets/img_bg/start-bg.png" id="2_dk6n7"]
+[ext_resource type="Texture2D" uid="uid://bwhh4xyn7sasn" path="res://assets/img_ui/button-normal.png" id="3_qwcd8"]
+[ext_resource type="Texture2D" uid="uid://bkt4hfwvineb6" path="res://assets/img_ui/button-hover.png" id="4_3rx4q"]
+[ext_resource type="FontFile" uid="uid://cme6hj874j41" path="res://assets/fonts/MadimiOne-Regular.ttf" id="5_mu8l2"]
+
+[node name="ResultsScreen" type="Control" node_paths=PackedStringArray("score", "letter_grade", "letter_grade_description")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5lfx")
+score = NodePath("ResultsText/Score")
+letter_grade = NodePath("ResultsText/HBoxContainer/LetterGrade")
+letter_grade_description = NodePath("ResultsText/HBoxContainer/LetterGradeDescription")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_dk6n7")
+
+[node name="ResultsText" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 185.625
+offset_bottom = 185.625
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopText" type="Label" parent="ResultsText"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_mu8l2")
+theme_override_font_sizes/font_size = 24
+text = "Your Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="ResultsText"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_mu8l2")
+theme_override_font_sizes/font_size = 48
+text = "00/00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResultsText"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+
+[node name="LetterGrade" type="Label" parent="ResultsText/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_mu8l2")
+theme_override_font_sizes/font_size = 128
+text = "A+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LetterGradeDescription" type="Label" parent="ResultsText/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_mu8l2")
+theme_override_font_sizes/font_size = 24
+text = "That was pretty good!
+You're an expert apothecary!"
+vertical_alignment = 1
+
+[node name="MenuButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -30.5
+offset_right = 168.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_qwcd8")
+texture_pressed = ExtResource("4_3rx4q")
+texture_hover = ExtResource("4_3rx4q")
+
+[node name="Label" type="Label" parent="MenuButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.278431, 0.101961, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("5_mu8l2")
+theme_override_font_sizes/font_size = 24
+text = "Back to Title Screen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

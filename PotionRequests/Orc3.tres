@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://bptkynad8ucyq"]
+
+[ext_resource type="Texture2D" uid="uid://bkrc7ieapicif" path="res://assets/img_customers/orc.png" id="1_utv3k"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_qk6hm"]
+
+[resource]
+script = ExtResource("2_qk6hm")
+tags_required = Array[String](["smoky", "spicy", "aromatic", "warm"])
+dialogue = "I'm having a barbecue tomorrow, and I need a dish that will wow people! Have anything to make it smell better and taste smokier?"
+customer = ExtResource("1_utv3k")

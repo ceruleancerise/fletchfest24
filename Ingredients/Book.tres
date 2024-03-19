@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://c1h76kmn08psi"]
+
+[ext_resource type="Script" path="res://Ingredient/Ingredient.gd" id="1_o6kkj"]
+[ext_resource type="Texture2D" uid="uid://hoevse34orkd" path="res://assets/img_items/book.png" id="2_kl6pv"]
+[ext_resource type="AudioStream" uid="uid://bhowyky6h5nec" path="res://assets/sfx_items/book.wav" id="2_l1v2u"]
+[ext_resource type="AudioStream" uid="uid://qxi206umfovf" path="res://assets/sfx_items/book_drop.wav" id="3_mr5kh"]
+
+[resource]
+script = ExtResource("1_o6kkj")
+title = "Book"
+tags = Array[String](["knowledgable", "flammable", "thought-provoking", "wordy", "puzzling"])
+texture = ExtResource("2_kl6pv")
+sfx_pickup = ExtResource("2_l1v2u")
+sfx_putdown = ExtResource("3_mr5kh")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://bwgqhjwmxo1h1"]
+
+[ext_resource type="Texture2D" uid="uid://di1jvntnpbyi1" path="res://assets/img_customers/elf-2.png" id="1_xx1dp"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_opieo"]
+
+[resource]
+script = ExtResource("2_opieo")
+tags_required = Array[String](["beautiful", "valuable", "stylish"])
+dialogue = "I'm tailoring dress as a gift to my partner, but I don't think it's very stylish. Any way to improve it, and make it sparkle?"
+customer = ExtResource("1_xx1dp")

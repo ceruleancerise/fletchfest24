@@ -1,0 +1,178 @@
+[gd_scene load_steps=14 format=3 uid="uid://b150me7q4mai6"]
+
+[ext_resource type="Script" path="res://IngredientShop/IngredientShop.gd" id="1_xc8ox"]
+[ext_resource type="Texture2D" uid="uid://owjiuqfplwqr" path="res://assets/img_props/shelf.png" id="2_6mqj5"]
+[ext_resource type="Resource" uid="uid://c1h76kmn08psi" path="res://Ingredients/Book.tres" id="2_7ieod"]
+[ext_resource type="Resource" uid="uid://bod5ei4qt6k41" path="res://Ingredients/Candle.tres" id="3_lqc84"]
+[ext_resource type="Resource" uid="uid://btj11po3y5ajd" path="res://Ingredients/Candy.tres" id="4_wtfao"]
+[ext_resource type="Resource" uid="uid://bkol28rs1ihs7" path="res://Ingredients/Cinnamon.tres" id="5_a4l8l"]
+[ext_resource type="PackedScene" uid="uid://djdudsvamqqo4" path="res://IngredientSlot/IngredientSlot.tscn" id="5_rusnc"]
+[ext_resource type="Resource" uid="uid://ci6b02qt4shj5" path="res://Ingredients/Crystal.tres" id="6_mqdf2"]
+[ext_resource type="Resource" uid="uid://dk711l2vftnam" path="res://Ingredients/Gameboy.tres" id="7_67f3g"]
+[ext_resource type="Resource" uid="uid://cmkvno4v8chtj" path="res://Ingredients/Plant.tres" id="8_65jxr"]
+[ext_resource type="Resource" uid="uid://coo1hyaa5yjl8" path="res://Ingredients/Shoe.tres" id="9_g1hte"]
+[ext_resource type="Texture2D" uid="uid://bg7v03ict6jen" path="res://assets/img_props/top-shelf-background-items.png" id="10_l1qyh"]
+[ext_resource type="Texture2D" uid="uid://br3s4mw2bahh4" path="res://assets/img_props/bottom-shelf-background-items.png" id="11_h7v16"]
+
+[node name="IngredientShop" type="MarginContainer" node_paths=PackedStringArray("slots")]
+offset_right = 600.0
+offset_bottom = 100.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_xc8ox")
+slots = [NodePath("Ingredients/Rows/Row1/IngredientSlot1"), NodePath("Ingredients/Rows/Row1/IngredientSlot2"), NodePath("Ingredients/Rows/Row1/IngredientSlot3"), NodePath("Ingredients/Rows/Row1/IngredientSlot4"), NodePath("Ingredients/Rows/Row2/IngredientSlot5"), NodePath("Ingredients/Rows/Row2/IngredientSlot6"), NodePath("Ingredients/Rows/Row2/IngredientSlot7"), NodePath("Ingredients/Rows/Row2/IngredientSlot8")]
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+
+[node name="PropGrid" type="GridContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="TopProps" type="TextureRect" parent="MarginContainer2/PropGrid"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10_l1qyh")
+
+[node name="Spacer1" type="ColorRect" parent="MarginContainer2/PropGrid"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="BottomProps" type="TextureRect" parent="MarginContainer2/PropGrid"]
+layout_mode = 2
+texture = ExtResource("11_h7v16")
+
+[node name="ShelfGrid" type="GridContainer" parent="."]
+layout_mode = 2
+
+[node name="Spacer1" type="ColorRect" parent="ShelfGrid"]
+custom_minimum_size = Vector2(0, 183)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Shelf1" type="TextureRect" parent="ShelfGrid"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_6mqj5")
+
+[node name="Spacer2" type="ColorRect" parent="ShelfGrid"]
+custom_minimum_size = Vector2(0, 148)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Shelf2" type="TextureRect" parent="ShelfGrid"]
+layout_mode = 2
+texture = ExtResource("2_6mqj5")
+
+[node name="Ingredients" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="Rows" type="VBoxContainer" parent="Ingredients"]
+layout_mode = 2
+
+[node name="Row1" type="HBoxContainer" parent="Ingredients/Rows"]
+layout_mode = 2
+
+[node name="Spacer1" type="ColorRect" parent="Ingredients/Rows/Row1"]
+custom_minimum_size = Vector2(28.73, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+color = Color(1, 1, 1, 0)
+
+[node name="IngredientSlot1" parent="Ingredients/Rows/Row1" instance=ExtResource("5_rusnc")]
+layout_mode = 2
+ingredient = ExtResource("9_g1hte")
+
+[node name="Spacer2" type="ColorRect" parent="Ingredients/Rows/Row1"]
+custom_minimum_size = Vector2(16.63, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+color = Color(1, 1, 1, 0)
+
+[node name="IngredientSlot2" parent="Ingredients/Rows/Row1" node_paths=PackedStringArray("audio_player") instance=ExtResource("5_rusnc")]
+layout_mode = 2
+audio_player = NodePath("../IngredientSlot1/AudioPlayer")
+ingredient = ExtResource("6_mqdf2")
+
+[node name="Spacer3" type="ColorRect" parent="Ingredients/Rows/Row1"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+color = Color(1, 1, 1, 0)
+
+[node name="IngredientSlot3" parent="Ingredients/Rows/Row1" node_paths=PackedStringArray("audio_player") instance=ExtResource("5_rusnc")]
+layout_mode = 2
+audio_player = NodePath("../IngredientSlot1/AudioPlayer")
+ingredient = ExtResource("5_a4l8l")
+
+[node name="Spacer4" type="ColorRect" parent="Ingredients/Rows/Row1"]
+custom_minimum_size = Vector2(88.105, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+color = Color(1, 1, 1, 0)
+
+[node name="IngredientSlot4" parent="Ingredients/Rows/Row1" node_paths=PackedStringArray("audio_player") instance=ExtResource("5_rusnc")]
+layout_mode = 2
+audio_player = NodePath("../IngredientSlot1/AudioPlayer")
+ingredient = ExtResource("7_67f3g")
+
+[node name="Spacer1" type="ColorRect" parent="Ingredients/Rows"]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Row2" type="HBoxContainer" parent="Ingredients/Rows"]
+layout_mode = 2
+
+[node name="Spacer1" type="ColorRect" parent="Ingredients/Rows/Row2"]
+custom_minimum_size = Vector2(32.05, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+color = Color(1, 1, 1, 0)
+
+[node name="IngredientSlot5" parent="Ingredients/Rows/Row2" node_paths=PackedStringArray("audio_player") instance=ExtResource("5_rusnc")]
+layout_mode = 2
+audio_player = NodePath("../../Row1/IngredientSlot1/AudioPlayer")
+ingredient = ExtResource("8_65jxr")
+
+[node name="Spacer2" type="ColorRect" parent="Ingredients/Rows/Row2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+color = Color(1, 1, 1, 0)
+
+[node name="IngredientSlot6" parent="Ingredients/Rows/Row2" node_paths=PackedStringArray("audio_player") instance=ExtResource("5_rusnc")]
+layout_mode = 2
+audio_player = NodePath("../../Row1/IngredientSlot1/AudioPlayer")
+ingredient = ExtResource("2_7ieod")
+
+[node name="Spacer3" type="ColorRect" parent="Ingredients/Rows/Row2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+color = Color(1, 1, 1, 0)
+
+[node name="IngredientSlot7" parent="Ingredients/Rows/Row2" node_paths=PackedStringArray("audio_player") instance=ExtResource("5_rusnc")]
+layout_mode = 2
+audio_player = NodePath("../../Row1/IngredientSlot1/AudioPlayer")
+ingredient = ExtResource("4_wtfao")
+
+[node name="Spacer4" type="ColorRect" parent="Ingredients/Rows/Row2"]
+custom_minimum_size = Vector2(50.46, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+color = Color(1, 1, 1, 0)
+
+[node name="IngredientSlot8" parent="Ingredients/Rows/Row2" node_paths=PackedStringArray("audio_player") instance=ExtResource("5_rusnc")]
+layout_mode = 2
+audio_player = NodePath("../../Row1/IngredientSlot1/AudioPlayer")
+ingredient = ExtResource("3_lqc84")

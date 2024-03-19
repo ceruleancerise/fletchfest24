@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=5 format=3 uid="uid://coo1hyaa5yjl8"]
+
+[ext_resource type="Script" path="res://Ingredient/Ingredient.gd" id="1_sdmj6"]
+[ext_resource type="AudioStream" uid="uid://3s47wrdwnq0d" path="res://assets/sfx_items/shoe.wav" id="2_3higu"]
+[ext_resource type="Texture2D" uid="uid://c16886xvpb8e1" path="res://assets/img_items/shoe.png" id="2_kiaob"]
+[ext_resource type="AudioStream" uid="uid://btb5hyayuwpqd" path="res://assets/sfx_items/shoe_drop.mp3" id="3_7520u"]
+
+[resource]
+script = ExtResource("1_sdmj6")
+title = "Shoe"
+tags = Array[String](["efficient", "speedy", "stylish", "floating", "leathery", "stylish"])
+texture = ExtResource("2_kiaob")
+sfx_pickup = ExtResource("2_3higu")
+sfx_putdown = ExtResource("3_7520u")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://d0508e617oxms"]
+
+[ext_resource type="Texture2D" uid="uid://b8qc6wf3mh5er" path="res://assets/img_customers/elf-boy.png" id="1_1lysr"]
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="2_gjhyv"]
+
+[resource]
+script = ExtResource("2_gjhyv")
+tags_required = Array[String](["romantic", "sweet", "entertaining"])
+dialogue = "There's a princess I'm rather fond of, but I don't think I'm fun to be around. Any way I can be more entertaining so she will like me? "
+customer = ExtResource("1_1lysr")

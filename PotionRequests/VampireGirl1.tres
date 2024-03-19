@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PotionRequest" load_steps=3 format=3 uid="uid://1krsoxa3uree"]
+
+[ext_resource type="Script" path="res://PotionRequest/PotionRequest.gd" id="1_7h24n"]
+[ext_resource type="Texture2D" uid="uid://bxdlhsdpvexxi" path="res://assets/img_customers/vampire-girl.png" id="1_nrgig"]
+
+[resource]
+script = ExtResource("1_7h24n")
+tags_required = Array[String](["natural", "beautiful"])
+dialogue = "I am trying to improve my beauty with an all-natural skin cleanser. Do you have a potion I can use?"
+customer = ExtResource("1_nrgig")

@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjjh4ek2nurc2"]
+
+[ext_resource type="Script" path="res://IngredientCauldron/IngredientCauldron.gd" id="1_7af4e"]
+[ext_resource type="Texture2D" uid="uid://f0h0s5aqbvec" path="res://assets/img_props/cauldron.png" id="2_5l6e4"]
+[ext_resource type="PackedScene" uid="uid://djdudsvamqqo4" path="res://IngredientSlot/IngredientSlot.tscn" id="3_6t04b"]
+[ext_resource type="Texture2D" uid="uid://b46n0ymu5qyrf" path="res://assets/img_ui/item-slots.png" id="4_ldfa0"]
+
+[node name="IngredientCauldron" type="MarginContainer" node_paths=PackedStringArray("slot_1", "slot_2")]
+offset_right = 784.0
+offset_bottom = 381.0
+script = ExtResource("1_7af4e")
+max_ingredient_count = 2
+slot_1 = NodePath("MarginContainer2/Slots/IngredientSlot1")
+slot_2 = NodePath("MarginContainer2/Slots/IngredientSlot2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 150
+
+[node name="Cauldron" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_5l6e4")
+
+[node name="SlotBackground" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("4_ldfa0")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/margin_top = 10
+
+[node name="Slots" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 16
+
+[node name="IngredientSlot1" parent="MarginContainer2/Slots" instance=ExtResource("3_6t04b")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+is_clearable = true
+
+[node name="IngredientSlot2" parent="MarginContainer2/Slots" node_paths=PackedStringArray("audio_player") instance=ExtResource("3_6t04b")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+audio_player = NodePath("../IngredientSlot1/AudioPlayer")
+is_clearable = true

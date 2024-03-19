@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsomiab3vj3xa"]
+
+[ext_resource type="Script" path="res://PotionScene/PotionScene.gd" id="1_dcbq4"]
+[ext_resource type="PackedScene" uid="uid://b150me7q4mai6" path="res://IngredientShop/IngredientShop.tscn" id="1_dpdg8"]
+[ext_resource type="PackedScene" uid="uid://mio3p1jkorlo" path="res://PotionActions/PotionActions.tscn" id="8_f386l"]
+[ext_resource type="PackedScene" uid="uid://bjjh4ek2nurc2" path="res://IngredientCauldron/IngredientCauldron.tscn" id="9_hvnk5"]
+
+[node name="PotionScene" type="MarginContainer" node_paths=PackedStringArray("ingredient_shop")]
+offset_right = 1280.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 0
+script = ExtResource("1_dcbq4")
+ingredient_shop = NodePath("Vbox/IngredientShop")
+
+[node name="Vbox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="IngredientShop" parent="Vbox" instance=ExtResource("1_dpdg8")]
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 24
+
+[node name="Spacer" type="BoxContainer" parent="Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PotionSceneBottom" type="HBoxContainer" parent="Vbox"]
+custom_minimum_size = Vector2(1280, 0)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="IngredientCauldron" parent="Vbox/PotionSceneBottom" instance=ExtResource("9_hvnk5")]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 10
+
+[node name="Spacer" type="BoxContainer" parent="Vbox/PotionSceneBottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PotionActions" parent="Vbox/PotionSceneBottom" instance=ExtResource("8_f386l")]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_top = 175
+theme_override_constants/margin_right = 32
+
+[connection signal="s_brew_button_pressed" from="Vbox/PotionSceneBottom/PotionActions" to="." method="_on_brew_button_pressed"]
+[connection signal="s_clear_button_pressed" from="Vbox/PotionSceneBottom/PotionActions" to="." method="_on_clear_button_pressed"]
